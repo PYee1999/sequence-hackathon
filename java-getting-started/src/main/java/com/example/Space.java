@@ -5,6 +5,12 @@ public class Space {
     private String cardSuitNum;
     private int occupancy;
 
+    public Space(int xLocation, int yLocation, String cardSuitNum, int occupancy) {
+        this.xLocation = xLocation;
+        this.yLocation = yLocation;
+        this.cardSuitNum= cardSuitNum; // Suit & Number
+        this.occupancy = occupancy; // -1, 0, 1
+    }
 
     public int getxLocation() {
         return xLocation;

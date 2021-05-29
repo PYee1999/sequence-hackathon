@@ -1,4 +1,5 @@
 package com.example;
+package javax.websocket.server;
 
 import java.io.IOException;
 import java.util.List;
@@ -39,4 +40,6 @@ public class WebSocket extends TextWebSocketHandler {
             }
         });
     }
+
+
 }
