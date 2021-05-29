@@ -1,7 +1,7 @@
 public class Card {
 
-    private int cardID;
-    private String cardSuitNum;
+    private int cardID;         // Unique Id for Card
+    private int cardSuitNum; // Suit & Number for card
 
     public int getCardID() {
         return cardID;
@@ -11,7 +11,7 @@ public class Card {
         this.cardID = cardID;
     }
 
-    public String getCardSuitNum() {
+    public int getCardSuitNum() {
         return cardSuitNum;
     }
 

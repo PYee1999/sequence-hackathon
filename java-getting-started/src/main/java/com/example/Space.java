@@ -1,15 +1,15 @@
 public class Space {
 
-    private int xLocation;
-    private int yLocation;
-    private String cardSuitNum;
-    private int occupancy;
+    private int xLocation;      // Horizontal Axis (Range: 0-9)
+    private int yLocation;      // Vertical Axis (Range: 0-9)
+    private int cardSuitNum;    // Suit & Number for card
+    private int occupancy;      // Is space occupied by player {-1, 0, 1}
 
-    public Space(int xLocation, int yLocation, String cardSuitNum, int occupancy) {
+    public Space(int xLocation, int yLocation, int cardSuitNum, int occupancy) {
         this.xLocation = xLocation;
         this.yLocation = yLocation;
-        this.cardSuitNum= cardSuitNum; // Suit & Number
-        this.occupancy = occupancy; // -1, 0, 1
+        this.cardSuitNum= cardSuitNum;
+        this.occupancy = occupancy;
     }
 
     public int getxLocation() {
@@ -28,7 +28,7 @@ public class Space {
         this.yLocation = yLocation;
     }
 
-    public String getCardSuitNum() {
+    public int getCardSuitNum() {
         return cardSuitNum;
     }
 

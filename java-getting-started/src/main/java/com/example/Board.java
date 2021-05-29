@@ -130,6 +130,9 @@ public class Board {
         board[9][9] = new Space(9, 9, 503, 0);  // Wildcard
     }
 
-    
+    // Checks if there exists a sequence in the board
+    public void checkSequence() {
+
+    }
 
 }
