@@ -1,4 +1,4 @@
-import com.example.*;
+package com.example;
 
 public class Board {
     // Set up the size of the board

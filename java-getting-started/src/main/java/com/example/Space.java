@@ -1,3 +1,5 @@
+package com.example;
+
 public class Space {
 
     private int xLocation;      // Horizontal Axis (Range: 0-9)
@@ -32,7 +34,7 @@ public class Space {
         return cardSuitNum;
     }
 
-    public void setCardSuitNum(String cardSuitNum) {
+    public void setCardSuitNum(int cardSuitNum) {
         this.cardSuitNum = cardSuitNum;
     }
 

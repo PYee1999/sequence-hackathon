@@ -1,3 +1,5 @@
+package com.example;
+
 public class Card {
 
     private int cardID;         // Unique Id for Card
@@ -15,7 +17,7 @@ public class Card {
         return cardSuitNum;
     }
 
-    public void setCardSuitNum(String cardSuitNum) {
+    public void setCardSuitNum(int cardSuitNum) {
         this.cardSuitNum = cardSuitNum;
     }
 
