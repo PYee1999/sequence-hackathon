@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="16a0f53f-9f5b-4907-a641-bd525b67992d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sequence-hackathon.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-getting-started/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-getting-started/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-getting-started/src/main/java/com/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-getting-started/src/main/java/com/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-getting-started/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/java-getting-started/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-getting-started/src/main/resources/public/lang-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-getting-started/src/main/resources/public/stylesheets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-getting-started/src/main/resources/templates/db.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-getting-started/src/main/resources/templates/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-getting-started/src/main/resources/templates/fragments/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-getting-started/src/main/resources/templates/index.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tDptjzV7zC2iGU0jSH6FIJHO0t" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="16a0f53f-9f5b-4907-a641-bd525b67992d" name="Default Changelist" comment="" />
+      <created>1622313737080</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622313737080</updated>
+      <workItem from="1622313747742" duration="1072000" />
+      <workItem from="1622314887738" duration="60000" />
+      <workItem from="1622314969082" duration="629000" />
+      <workItem from="1622315632111" duration="88000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
