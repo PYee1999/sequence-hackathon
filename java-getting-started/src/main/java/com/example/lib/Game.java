@@ -26,8 +26,12 @@ public class Game {
         }
     }
 
-    public void nextTurn() {
-        // TODO: Logic for one turn
+    public void nextTurn(Card card) {
+        Player currentPlayer = redsTurn ? red : blue;
+        currentPlayer.selectCard(card);
+        currentPlayer.takeMarker();
+        currentPlayer.selectSpace();
+        currentPlayer.addCard(deck.deal());
         redsTurn = !redsTurn;
     }
 }

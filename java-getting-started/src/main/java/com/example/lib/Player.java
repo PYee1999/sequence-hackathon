@@ -24,9 +24,24 @@ public class Player {
         cardsList.add(card);
     }
 
-    public Card selectCard(Card card) {
-        // TODO: select card logic
+    public int getPlayerMarker() {
+        return playerMarker;
+    }
 
+    public int getSequenceCounter() {
+        return sequenceCounter;
+    }
+
+    public void setSequenceCounter(int val) {
+        sequenceCounter = val;
+    }
+
+    public Card selectCard(Card card) {
+        if(cardsList.contains(card)) {
+            cardsList.remove(card);
+            return card;
+        }
+        return null;
     }
 
     public void takeMarker() {

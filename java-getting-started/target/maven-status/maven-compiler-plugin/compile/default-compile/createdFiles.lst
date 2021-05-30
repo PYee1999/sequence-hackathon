@@ -2,6 +2,7 @@ com\example\WebSocket.class
 com\example\Main.class
 com\example\lib\Space.class
 com\example\lib\Player.class
+com\example\Constants.class
 com\example\WebSocketConfig.class
 com\example\lib\Card.class
 com\example\lib\Deck.class

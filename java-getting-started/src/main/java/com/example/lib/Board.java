@@ -1,11 +1,14 @@
 package com.example.lib;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Board {
 
     private Space[][] board = new Space[10][10]; // Set up the size of the board
     private List<Space> newSequenceList = new ArrayList<>(); // Get newly-founded sequence
 
-    public int getBoard() {
+    public Space[][] getBoard() {
         return board;
     }
 
@@ -144,7 +147,7 @@ public class Board {
     }
 
     // Checks if there exists a sequence in the board
-    public void checkSequence(int x, int y, Player player) {
+    public int checkSequence(int x, int y, Player player) {
 
         boolean sequenceFound = false;
         newSequenceList.clear();
@@ -219,6 +222,7 @@ public class Board {
             //      If there is intersection, check that the intersection is only 1 space
             // Declare winner or resume.
         }
+        return player.getSequenceCounter();
     }
 
     // Helper recursive method to find adjacent spaces with same marker to find possible sequence
@@ -232,7 +236,7 @@ public class Board {
         if ((board[y][x].getCardSuitNum() == 501) ||
             (board[y][x].getCardSuitNum() == 502) ||
             (board[y][x].getCardSuitNum() == 503) ||
-            (board[y][x].getCardSuitNum() == 504) {
+            (board[y][x].getCardSuitNum() == 504)) {
             return 1; // If so, count it by returning 1 and stop recursing
         }
 
@@ -250,7 +254,7 @@ public class Board {
         }
 
         // Add sequence to list to keep track.
-        newSequenceList.add(new Space(x, y, board[y][x].getCardSuitNum(), board[y][x].getOccupancy())));
+        newSequenceList.add(new Space(x, y, board[y][x].getCardSuitNum(), board[y][x].getOccupancy()));
 
         // Beyond all checks, recurse to the next space and check if it has the same marker.
         return 1 + checkNextSquare(x + xMove, y + yMove, xMove, yMove, playerMarker, maxDist--);
