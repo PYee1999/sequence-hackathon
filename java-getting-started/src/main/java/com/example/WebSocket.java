@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import com.example.lib.Board;
 import com.example.lib.Game;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

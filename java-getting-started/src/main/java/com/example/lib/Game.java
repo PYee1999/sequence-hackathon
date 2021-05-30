@@ -7,10 +7,10 @@ public class Game {
     private Player red;
     private Player blue;
     private Deck deck;
-    private boolean currentPlayer;
+    private boolean redsTurn;
 
     public Game() {
-        currentPlayer = new Random().nextBoolean();
+        redsTurn = new Random().nextBoolean();
         board = new Board();
         board.initBoard();
         deck = new Deck();
