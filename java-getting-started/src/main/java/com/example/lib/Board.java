@@ -1,4 +1,4 @@
-package com.example;
+package com.example.lib;
 
 public class Board {
     // Set up the size of the board

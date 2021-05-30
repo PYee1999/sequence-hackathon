@@ -3,6 +3,9 @@ package com.example;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+
+import com.example.lib.Board;
+import com.example.lib.Game;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.socket.CloseStatus;
@@ -15,6 +18,12 @@ public class WebSocket extends TextWebSocketHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(WebSocket.class);
 
     private final List<WebSocketSession> sessions = new CopyOnWriteArrayList<>();
+
+    private Game game;
+
+    public WebSocket() {
+        game = new Game();
+    }
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
