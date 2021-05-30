@@ -20,7 +20,9 @@ public class Board {
     }
 
     // Get specified space on board
-    public Space getSpaceOnBoard(int x, int y) { return board[y][x]; }
+    public Space getSpaceOnBoard(int x, int y) {
+        return board[y][x];
+    }
 
     // Initialize board by populating the Spaces.
     public void initBoard() {
@@ -240,15 +242,15 @@ public class Board {
         }
 
         // Check if that space happens to be on a Wildcard (or at the corner of the board)
-        if ((board[y][x].getCardSuitNum() == 501) ||
-                (board[y][x].getCardSuitNum() == 502) ||
-                (board[y][x].getCardSuitNum() == 503) ||
-                (board[y][x].getCardSuitNum() == 504)) {
+        if ((getSpaceOnBoard(x, y).getCardSuitNum() == 501) ||
+            (getSpaceOnBoard(x, y).getCardSuitNum() == 502) ||
+            (getSpaceOnBoard(x, y).getCardSuitNum() == 503) ||
+            (getSpaceOnBoard(x, y).getCardSuitNum() == 504)) {
             return 1; // If so, count it by returning 1 and stop recursing
         }
 
         // Check if the space has the same marker as the player
-        if (board[y][x].getOccupancy() != playerMarker) {
+        if (getSpaceOnBoard(x, y).getOccupancy() != playerMarker) {
             return 0; // If NOT, return 0 and stop recursing
         }
 
@@ -261,7 +263,7 @@ public class Board {
         }
 
         // Add sequence to list to keep track.
-        newSequenceList.add(new Space(x, y, board[y][x].getCardSuitNum(), board[y][x].getOccupancy()));
+        newSequenceList.add(new Space(x, y, getSpaceOnBoard(x, y).getCardSuitNum(), getSpaceOnBoard(x, y).getOccupancy()));
 
         // Beyond all checks, recurse to the next space and check if it has the same marker.
         return 1 + checkNextSquare(x + xMove, y + yMove, xMove, yMove, playerMarker, maxDist--);

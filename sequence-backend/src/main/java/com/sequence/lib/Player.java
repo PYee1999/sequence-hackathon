@@ -58,7 +58,6 @@ public class Player {
 
     // Turns the chosen space's occupency to 0;
     public Space takeMarker() {
-
         Space chosen = youChoose(); // Select space on board
 
         // Have player reselect space if the space contains player's own marker or no marker
@@ -94,6 +93,7 @@ public class Player {
             for(int j = 0; j < 10; j++) {
                 if (card.getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum() &&
                         board.getBoard()[i][j].getOccupancy() == 0) {
+                    // If there are spaces, update choices and spacesFound counter
                     if (choice1 == null) {
                         choice1 = board.getBoard()[i][j];
                     } else {
