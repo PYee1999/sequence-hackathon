@@ -11,7 +11,7 @@ public class Deck {
     public void initDeck() {
         cards = new LinkedList<>();
         cardNum = 104;
-        for (int i = 0; i < 103; i++) {
+        for (int i = 0; i < 104; i++) {
             cards.add(new Card(i, calcCardSuitNum(i)));
         }
         shuffle();

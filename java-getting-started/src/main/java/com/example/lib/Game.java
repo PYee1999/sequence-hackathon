@@ -25,4 +25,9 @@ public class Game {
             blue.drawCard(deck.deal());
         }
     }
+
+    public void nextTurn() {
+        // TODO: Logic for one turn
+        redsTurn = !redsTurn;
+    }
 }

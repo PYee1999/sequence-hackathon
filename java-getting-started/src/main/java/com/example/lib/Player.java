@@ -10,7 +10,7 @@ public class Player {
     private List<Card> cardsList;
     private Board board;
 
-    // 1 is red, -1 is blue
+    // playerColor: 1 is red, -1 is blue
     public Player(Board board, int playerColor) {
         this.board = board;
         playerMarker = playerColor;
@@ -20,5 +20,17 @@ public class Player {
 
     public void drawCard(Card card) {
         cardsList.add(card);
+    }
+
+    public void selectCard() {
+        // TODO: select card logic
+    }
+
+    public void takeMarker() {
+        // TODO: take marker logic
+    }
+
+    public void selectSpace() {
+        // TODO: select space logic
     }
 }
