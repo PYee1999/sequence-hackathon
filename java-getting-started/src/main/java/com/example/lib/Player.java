@@ -9,10 +9,12 @@ public class Player {
     private List<Space> sequenceList;
     private List<Card> cardsList;
     private Board board;
+    private Deck deck;
 
     // playerColor: 1 is red, -1 is blue
-    public Player(Board board, int playerColor) {
+    public Player(Board board, Deck deck, int playerColor) {
         this.board = board;
+        this.deck = deck;
         playerMarker = playerColor;
         sequenceCounter = 0;
         cardsList = new ArrayList<>();

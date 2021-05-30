@@ -16,12 +16,12 @@ public class Game {
         deck = new Deck();
         deck.initDeck();
         deck.shuffle();
-        red = new Player(board, 1);
-        blue = new Player(board, -1);
-        for(int i = 0; i < 7; i++) {
+        red = new Player(board, deck, 1);
+        blue = new Player(board, deck, -1);
+        for (int i = 0; i < 7; i++) {
             red.addCard(deck.deal());
         }
-        for(int i = 0; i < 7; i++) {
+        for (int i = 0; i < 7; i++) {
             blue.addCard(deck.deal());
         }
     }
