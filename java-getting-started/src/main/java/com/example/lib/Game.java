@@ -19,10 +19,10 @@ public class Game {
         red = new Player(board, 1);
         blue = new Player(board, -1);
         for(int i = 0; i < 7; i++) {
-            red.drawCard(deck.deal());
+            red.addCard(deck.deal());
         }
         for(int i = 0; i < 7; i++) {
-            blue.drawCard(deck.deal());
+            blue.addCard(deck.deal());
         }
     }
 
