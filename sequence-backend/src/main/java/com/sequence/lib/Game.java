@@ -32,15 +32,14 @@ public class Game {
     }
 
     public void selectCard(Card card) {
-        Player currentPlayer = redsTurn ? red : blue;
-        currentPlayer.selectCard(card);
-        currentPlayer.addCard(deck.deal());
+        Player currentPlayer = redsTurn ? red : blue;   // Get player
+        currentPlayer.selectCard(card);     // Select card and remove from player's hand
+        currentPlayer.addCard(deck.deal()); // Add new card to player's hand from deck
     }
 
     public void selectSpace(Card card) {
         Player currentPlayer = redsTurn ? red : blue;
-        currentPlayer.takeMarker();
-        Space chosenSpace = currentPlayer.selectSpace(card); // TODO: Need to check that selectSpace() returns Space
+        Space chosenSpace = currentPlayer.selectSpace(card);
         int win = board.checkSequence(chosenSpace.getxLocation(), chosenSpace.getyLocation(), currentPlayer);
         if (win == 2) {
             // TODO: Declare winner

@@ -95,18 +95,15 @@ public class Player {
                     } else {
                         choice2 = board.getBoard()[i][j];
                     }
-
                     spacesFound++;
                 }
             }
         }
 
-        if (spacesFound == 2) { // Pick one space of the two spaces
-            return pickOne(choice1, choice2);
-        } else if (spacesFound == 1) { // Automatically pick the only space
-            return choice1;
-        } else { // Dead Card
-            return null;
+        if (spacesFound == 2) {                 // If there are two spaces found,
+            return pickOne(choice1, choice2);   // Pick one space of the two spaces
+        } else {                                // Otherwise,
+            return choice1;                     // Automatically pick the only space
         }
     }
 
