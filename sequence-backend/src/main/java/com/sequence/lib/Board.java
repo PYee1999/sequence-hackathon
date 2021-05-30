@@ -8,6 +8,12 @@ public class Board {
     private Space[][] board = new Space[10][10]; // Set up the size of the board
     private List<Space> newSequenceList = new ArrayList<>(); // Get newly-founded sequence
 
+    private final int MOVE_LEFT = -1;
+    private final int MOVE_RIGHT = 1;
+    private final int MOVE_UP = 1;
+    private final int MOVE_DOWN = -1;
+    private final int STAY = 0;
+
     public Space[][] getBoard() {
         return board;
     }
@@ -156,9 +162,9 @@ public class Board {
         switch (checkAllSides) {
             case 1:
                 // Check if there is any horizontal sequence (x-axis)
-                int totalXCount = checkNextSquare(x, y, 1, 0, player.getPlayerMarker(), 5);
+                int totalXCount = checkNextSquare(x, y, MOVE_RIGHT, STAY, player.getPlayerMarker(), 5);
                 if (totalXCount < 5) {
-                    totalXCount += checkNextSquare(x, y, -1, 0, player.getPlayerMarker(), 5 - totalXCount);
+                    totalXCount += checkNextSquare(x, y, MOVE_LEFT, STAY, player.getPlayerMarker(), 5 - totalXCount);
                 }
                 if (totalXCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -168,9 +174,9 @@ public class Board {
                 }
             case 2:
                 // Check if there is any vertical sequence (y-axis)
-                int totalYCount = checkNextSquare(x, y, 0, 1, player.getPlayerMarker(), 5);
+                int totalYCount = checkNextSquare(x, y, STAY, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalYCount < 5) {
-                    totalYCount += checkNextSquare(x, y, 0, -1, player.getPlayerMarker(), 5 - totalYCount);
+                    totalYCount += checkNextSquare(x, y, STAY, MOVE_DOWN, player.getPlayerMarker(), 5 - totalYCount);
                 }
                 if (totalYCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -181,10 +187,10 @@ public class Board {
             case 3:
                 // Check if there is a left diagonal sequence (diagonal: top-left to bottom-right)
                 int totalLDiagonalCount =
-                        checkNextSquare(x, y, -1, 1, player.getPlayerMarker(), 5);
+                        checkNextSquare(x, y, MOVE_LEFT, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalLDiagonalCount < 5) {
                     totalLDiagonalCount +=
-                            checkNextSquare(x, y, 1, -1, player.getPlayerMarker(), 5 - totalLDiagonalCount);
+                            checkNextSquare(x, y, MOVE_RIGHT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalLDiagonalCount);
                 }
                 if (totalLDiagonalCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -195,10 +201,10 @@ public class Board {
             case 4:
                 // Check if there is a right diagonal sequence (diagonal: bottom-left to top-right)
                 int totalRDiagonalCount =
-                        checkNextSquare(x, y, 1, 1, player.getPlayerMarker(), 5);
+                        checkNextSquare(x, y, MOVE_RIGHT, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalRDiagonalCount < 5) {
                     totalRDiagonalCount +=
-                            checkNextSquare(x, y, -1, -1, player.getPlayerMarker(), 5 - totalRDiagonalCount);
+                            checkNextSquare(x, y, MOVE_LEFT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalRDiagonalCount);
                 }
                 if (totalRDiagonalCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -210,22 +216,19 @@ public class Board {
         if (sequenceFound) {
             if (player.getSequenceCounter() == 1) { // If you have 1 sequence found previously,
                 int intersections = 0;
-                for(Space val : newSequenceList) {
+                for(Space val : newSequenceList) { // Check for any intersections between sequences
                     if (player.getSequenceList().contains(val)) {
                         intersections++;
                     }
                 };
-                if (intersections <= 1) {
-                    player.setSequenceCounter(2);
+                if (intersections <= 1) {   // If there is at most one sequence,
+                    player.setSequenceCounter(2);   // Set sequence count to 2.
+                    // TODO: Need to declare winner.
                 }
             } else { // Otherwise, if you have 0 sequences previously,
                 player.setSequenceCounter(1); // Set sequence counter to 1.
-                player.setSequenceList(newSequenceList);
+                player.setSequenceList(newSequenceList); // Save sequence
             }
-            // If first, increment and add into the list.
-            // If second, check if there is any intersection with the first
-            //      If there is intersection, check that the intersection is only 1 space
-            // Declare winner or resume.
         }
         return player.getSequenceCounter();
     }
