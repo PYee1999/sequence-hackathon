@@ -18,14 +18,6 @@ public class Board {
         return board;
     }
 
-//    public int getSequenceList() {
-//        return newSequenceList;
-//    }
-//
-//    public void setSequenceList(int newSequenceList) {
-//        this.newSequenceList = newSequenceList;
-//    }
-
     // Initialize board by populating the Spaces.
     public void initBoard() {
         // board[y][x] = new Space(x, y, cardSuitNum, occupancy)
@@ -162,9 +154,11 @@ public class Board {
         switch (checkAllSides) {
             case 1:
                 // Check if there is any horizontal sequence (x-axis)
-                int totalXCount = checkNextSquare(x, y, MOVE_RIGHT, STAY, player.getPlayerMarker(), 5);
+                int totalXCount =
+                        checkNextSquare(x, y, MOVE_RIGHT, STAY, player.getPlayerMarker(), 5);
                 if (totalXCount < 5) {
-                    totalXCount += checkNextSquare(x, y, MOVE_LEFT, STAY, player.getPlayerMarker(), 5 - totalXCount);
+                    totalXCount +=
+                        checkNextSquare(x, y, MOVE_LEFT, STAY, player.getPlayerMarker(), 5 - totalXCount);
                 }
                 if (totalXCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -174,9 +168,11 @@ public class Board {
                 }
             case 2:
                 // Check if there is any vertical sequence (y-axis)
-                int totalYCount = checkNextSquare(x, y, STAY, MOVE_UP, player.getPlayerMarker(), 5);
+                int totalYCount =
+                        checkNextSquare(x, y, STAY, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalYCount < 5) {
-                    totalYCount += checkNextSquare(x, y, STAY, MOVE_DOWN, player.getPlayerMarker(), 5 - totalYCount);
+                    totalYCount +=
+                        checkNextSquare(x, y, STAY, MOVE_DOWN, player.getPlayerMarker(), 5 - totalYCount);
                 }
                 if (totalYCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -190,7 +186,7 @@ public class Board {
                         checkNextSquare(x, y, MOVE_LEFT, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalLDiagonalCount < 5) {
                     totalLDiagonalCount +=
-                            checkNextSquare(x, y, MOVE_RIGHT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalLDiagonalCount);
+                        checkNextSquare(x, y, MOVE_RIGHT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalLDiagonalCount);
                 }
                 if (totalLDiagonalCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -204,7 +200,7 @@ public class Board {
                         checkNextSquare(x, y, MOVE_RIGHT, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalRDiagonalCount < 5) {
                     totalRDiagonalCount +=
-                            checkNextSquare(x, y, MOVE_LEFT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalRDiagonalCount);
+                        checkNextSquare(x, y, MOVE_LEFT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalRDiagonalCount);
                 }
                 if (totalRDiagonalCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -222,11 +218,10 @@ public class Board {
                     }
                 };
                 if (intersections <= 1) {   // If there is at most one sequence,
-                    player.setSequenceCounter(2);   // Set sequence count to 2.
-                    // TODO: Need to declare winner.
+                    player.setSequenceCounter(2);   // Set sequence count to 2
                 }
             } else { // Otherwise, if you have 0 sequences previously,
-                player.setSequenceCounter(1); // Set sequence counter to 1.
+                player.setSequenceCounter(1); // Set sequence counter to 1
                 player.setSequenceList(newSequenceList); // Save sequence
             }
         }
