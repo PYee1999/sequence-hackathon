@@ -36,8 +36,20 @@ public class Player {
         sequenceCounter = val;
     }
 
+    public List<Card> getCardsList() {
+        return cardsList;
+    }
+
+    public List<Space> getSequenceList() {
+        return sequenceList;
+    }
+
+    public void setSequenceList(List<Space> val) {
+        sequenceList = val;
+    }
+
     public Card selectCard(Card card) {
-        if(cardsList.contains(card)) {
+        if (cardsList.contains(card)) {
             cardsList.remove(card);
             return card;
         }

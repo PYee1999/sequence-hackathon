@@ -2,6 +2,7 @@ package com.example.lib;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Board {
 
@@ -158,7 +159,7 @@ public class Board {
                 // Check if there is any horizontal sequence (x-axis)
                 int totalXCount = checkNextSquare(x, y, 1, 0, player.getPlayerMarker(), 5);
                 if (totalXCount < 5) {
-                    totalXCount += checkNextSquare(x, y, -1, 0, player.getPlayerMarker(), 5-totalXCount);
+                    totalXCount += checkNextSquare(x, y, -1, 0, player.getPlayerMarker(), 5 - totalXCount);
                 }
                 if (totalXCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -170,7 +171,7 @@ public class Board {
                 // Check if there is any vertical sequence (y-axis)
                 int totalYCount = checkNextSquare(x, y, 0, 1, player.getPlayerMarker(), 5);
                 if (totalYCount < 5) {
-                    totalYCount += checkNextSquare(x, y, 0, -1, player.getPlayerMarker(), 5-totalYCount);
+                    totalYCount += checkNextSquare(x, y, 0, -1, player.getPlayerMarker(), 5 - totalYCount);
                 }
                 if (totalYCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -184,7 +185,7 @@ public class Board {
                         checkNextSquare(x, y, -1, 1, player.getPlayerMarker(), 5);
                 if (totalLDiagonalCount < 5) {
                     totalLDiagonalCount +=
-                            checkNextSquare(x, y, 1, -1, player.getPlayerMarker(), 5-totalLDiagonalCount);
+                            checkNextSquare(x, y, 1, -1, player.getPlayerMarker(), 5 - totalLDiagonalCount);
                 }
                 if (totalLDiagonalCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -198,7 +199,7 @@ public class Board {
                         checkNextSquare(x, y, 1, 1, player.getPlayerMarker(), 5);
                 if (totalRDiagonalCount < 5) {
                     totalRDiagonalCount +=
-                            checkNextSquare(x, y, -1, -1, player.getPlayerMarker(), 5-totalRDiagonalCount);
+                            checkNextSquare(x, y, -1, -1, player.getPlayerMarker(), 5 - totalRDiagonalCount);
                 }
                 if (totalRDiagonalCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -210,9 +211,18 @@ public class Board {
         if (sequenceFound) {
             if (player.getSequenceCounter() == 1) { // If you have 1 sequence found previously,
                 // TODO: need to check for any intersections.
-
+                AtomicInteger intersections = new AtomicInteger();
+                newSequenceList.forEach(val -> {
+                    if (player.getSequenceList().contains(val)) {
+                        intersections.getAndIncrement();
+                    }
+                });
+                if (intersections.get() > 1) {
+                    // TODO: logic for intersection
+                }
             } else { // Otherwise, if you have 0 sequences previously,
                 player.setSequenceCounter(1); // Set sequence counter to 1.
+                player.setSequenceList(newSequenceList);
                 // TODO: Add new sequence to player's sequence.
             }
 
@@ -234,9 +244,9 @@ public class Board {
 
         // Check if that space happens to be on a Wildcard (or at the corner of the board)
         if ((board[y][x].getCardSuitNum() == 501) ||
-            (board[y][x].getCardSuitNum() == 502) ||
-            (board[y][x].getCardSuitNum() == 503) ||
-            (board[y][x].getCardSuitNum() == 504)) {
+                (board[y][x].getCardSuitNum() == 502) ||
+                (board[y][x].getCardSuitNum() == 503) ||
+                (board[y][x].getCardSuitNum() == 504)) {
             return 1; // If so, count it by returning 1 and stop recursing
         }
 
@@ -247,9 +257,9 @@ public class Board {
 
         // Check if the space is at the edge of the board (exclude corners)
         if ((x == 0 && xMove < 0) ||    // Check left edge
-            (x == 9 && xMove > 0) ||    // Check right edge
-            (y == 0 && yMove < 0) ||    // Check bottom edge
-            (y == 9 && yMove > 0)) {    // Check top edge
+                (x == 9 && xMove > 0) ||    // Check right edge
+                (y == 0 && yMove < 0) ||    // Check bottom edge
+                (y == 9 && yMove > 0)) {    // Check top edge
             return 1; // If so, return 1 and stop recursing
         }
 
