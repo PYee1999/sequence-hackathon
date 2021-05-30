@@ -56,13 +56,75 @@ public class Player {
         return null;
     }
 
-    public void takeMarker() {
-        // TODO: take marker logic
+    // Turns the chosen space's occupency to 0;
+    public Space takeMarker() {
+
+        Space chosen = youChoose();
+
+
+        int x = chosen.getxLocation();
+        int y = chosen.getxLocation();
+
+        board.getBoard()[x][y].setOccupancy(0);
+        return chosen;
+    }
+
+    public Space selectSpace(Card card) {
+        // If the card is a two-eyed jack(wild card), go to youChoose()
+        if((card.getCardSuitNum() == 211) || (card.getCardSuitNum() == 311) ) {
+            return youChoose();
+        }
+
+        // If the card is a one-eyed jack(sabetour card), go to takeMarker()
+        else if((card.getCardSuitNum() == 111) || (card.getCardSuitNum() == 411) ) {
+            return takeMarker();
+        }
+
+        int spacesFound = 0;
+        Space choice1 = null;
+        Space choice2 = null;
+
+        // Check the whole board to see if there are any non-occupied spaces
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 10; j++) {
+
+                if (card.getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum() &&
+                        board.getBoard()[i][j].getOccupancy() == 0) {
+                    if (choice1 == null) {
+                        choice1 = board.getBoard()[i][j];
+                    } else {
+                        choice2 = board.getBoard()[i][j];
+                    }
+
+                    spacesFound++;
+                }
+            }
+        }
+
+        // Pick one space of the two spaces
+        if (spacesFound == 2) {
+            return pickOne(choice1, choice2);
+
+            // Automatically pick the only space
+        } else if (spacesFound == 1) {
+            return choice1;
+
+            // Dead Card
+        } else {
+            return null;
+        }
+    }
+
+    // Outputs chosen space from 2 spaces
+    public Space pickOne(Space option1, Space option2) {
 
     }
 
-    public Space selectSpace() {
-        // TODO: select space logic
-        return null;
+
+    // Outputs chosen space from whole board
+    public Space youChoose() {
+
     }
+
+
 }
