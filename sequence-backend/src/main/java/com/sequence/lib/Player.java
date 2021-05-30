@@ -59,13 +59,17 @@ public class Player {
     // Turns the chosen space's occupency to 0;
     public Space takeMarker() {
 
-        Space chosen = youChoose();
+        Space chosen = youChoose(); // Select space on board
 
+        // Have player reselect space if the space contains player's own marker or no marker
+        while (chosen.getOccupancy() == playerMarker || chosen.getOccupancy() == 0) {
+            chosen = youChoose();
+        }
 
-        int x = chosen.getxLocation();
-        int y = chosen.getxLocation();
+        int x = chosen.getxLocation(); // Get x-coordinate of selected space
+        int y = chosen.getyLocation(); // Get y-coordinate of selected space
 
-        board.getBoard()[x][y].setOccupancy(0);
+        board.getSpaceOnBoard(x, y).setOccupancy(0); // Remove opponent's marker on board
         return chosen;
     }
 

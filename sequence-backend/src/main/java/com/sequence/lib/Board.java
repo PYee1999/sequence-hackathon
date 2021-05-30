@@ -14,9 +14,13 @@ public class Board {
     private final int MOVE_DOWN = -1;
     private final int STAY = 0;
 
+    // Get board
     public Space[][] getBoard() {
         return board;
     }
+
+    // Get specified space on board
+    public Space getSpaceOnBoard(int x, int y) { return board[y][x]; }
 
     // Initialize board by populating the Spaces.
     public void initBoard() {
