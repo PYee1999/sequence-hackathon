@@ -117,13 +117,13 @@ public class Player {
 
     // Outputs chosen space from 2 spaces
     public Space pickOne(Space option1, Space option2) {
-
+        return null;
     }
 
 
     // Outputs chosen space from whole board
     public Space youChoose() {
-
+        return null;
     }
 
 

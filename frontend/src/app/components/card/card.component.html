@@ -1,5 +1,5 @@
 <div style="display: flex; flex-direction: row">
-  <div class="card" *ngFor="let card of cards">
+  <div class="card" *ngFor="let card of cards" (click)="cardSelected.emit(card)">
     <p>{{card.cardID}}</p>
     <p>{{card.cardSuitNum}}</p>
     <p>{{getCardName(card.cardSuitNum)}}</p>

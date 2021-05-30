@@ -1,4 +1,4 @@
-package com.sequence;
+package com.sequence.lib;
 
 import java.util.Random;
 import static com.sequence.Constants.*;
@@ -31,12 +31,16 @@ public class Game {
         }
     }
 
-    public void nextTurn(Card card) {
+    public void selectCard(Card card) {
         Player currentPlayer = redsTurn ? red : blue;
         currentPlayer.selectCard(card);
-        currentPlayer.takeMarker();
-        Space chosenSpace = currentPlayer.selectSpace(); // TODO: Need to check that selectSpace() returns Space
         currentPlayer.addCard(deck.deal());
+    }
+
+    public void selectSpace(Card card) {
+        Player currentPlayer = redsTurn ? red : blue;
+        currentPlayer.takeMarker();
+        Space chosenSpace = currentPlayer.selectSpace(card); // TODO: Need to check that selectSpace() returns Space
         int win = board.checkSequence(chosenSpace.getxLocation(), chosenSpace.getyLocation(), currentPlayer);
         if (win == 2) {
             // TODO: Declare winner
@@ -66,5 +70,9 @@ public class Game {
 
     public void setBlue(Player blue) {
         this.blue = blue;
+    }
+
+    public boolean isRedsTurn() {
+        return redsTurn;
     }
 }
