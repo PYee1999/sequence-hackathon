@@ -31,8 +31,12 @@ public class Game {
         Player currentPlayer = redsTurn ? red : blue;
         currentPlayer.selectCard(card);
         currentPlayer.takeMarker();
-        currentPlayer.selectSpace();
+        Space chosenSpace = currentPlayer.selectSpace(); // TODO: Need to check that selectSpace() returns Space
         currentPlayer.addCard(deck.deal());
+        int win = board.checkSequence(chosenSpace.getxLocation(), chosenSpace.getyLocation(), currentPlayer);
+        if (win == 2) {
+            // TODO: Declare winner
+        }
         redsTurn = !redsTurn;
     }
 
