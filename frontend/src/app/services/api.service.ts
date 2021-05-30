@@ -22,7 +22,10 @@ export class ApiService {
     }
   }
 
-  sendObject(obj: any) {
-    this.webSocket.next(obj);
+  sendObject(type: string, body: any) {
+    this.webSocket.next({
+      type: type,
+      body: JSON.stringify(body)
+    });
   }
 }

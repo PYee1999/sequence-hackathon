@@ -12,12 +12,13 @@ public class Game {
     public Game() {
         redsTurn = new Random().nextBoolean();
         board = new Board();
-        board.initBoard();
         deck = new Deck();
+    }
+
+    public void startGame() {
+        board.initBoard();
         deck.initDeck();
         deck.shuffle();
-        red = new Player(board, deck, 1);
-        blue = new Player(board, deck, -1);
         for (int i = 0; i < 7; i++) {
             red.addCard(deck.deal());
         }
@@ -33,5 +34,29 @@ public class Game {
         currentPlayer.selectSpace();
         currentPlayer.addCard(deck.deal());
         redsTurn = !redsTurn;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public Player getRed() {
+        return red;
+    }
+
+    public Player getBlue() {
+        return blue;
+    }
+
+    public Deck getDeck() {
+        return deck;
+    }
+
+    public void setRed(Player red) {
+        this.red = red;
+    }
+
+    public void setBlue(Player blue) {
+        this.blue = blue;
     }
 }

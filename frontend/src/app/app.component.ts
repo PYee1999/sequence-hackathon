@@ -14,13 +14,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.socket.subscribe(console.log);
-    this.apiService.sendObject({
-      message: 'hello'
+    this.apiService.sendObject('join', {
+      name: 'Testing player'
     });
-    setTimeout(() => {
-      this.apiService.sendObject({
-        message: 'hello again'
-      });
-    }, 1000);
   }
 }
