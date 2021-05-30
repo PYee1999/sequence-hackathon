@@ -1,2 +1,3 @@
 <h1>{{message}}</h1>
-<app-card [cards]="cards"></app-card>
+<app-board [board]="board" *ngIf="board"></app-board>
+<app-card [cards]="cards" *ngIf="cards"></app-card>

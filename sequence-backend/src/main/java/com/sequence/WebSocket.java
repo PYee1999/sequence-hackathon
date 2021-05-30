@@ -91,9 +91,9 @@ public class WebSocket extends TextWebSocketHandler {
                     ResponseCarrier responseCarrier1 = new ResponseCarrier();
                     responseCarrier1.setType(Constants.START_GAME_RES_TYPE);
                     if (player.getPlayerMarker() == Constants.PLAYER_RED) {
-                        responseCarrier1.setBody(new StartGameResponse(game.getRed().getCardsList()));
+                        responseCarrier1.setBody(new StartGameResponse(game.getRed().getCardsList(), game.getBoard()));
                     } else {
-                        responseCarrier1.setBody(new StartGameResponse(game.getBlue().getCardsList()));
+                        responseCarrier1.setBody(new StartGameResponse(game.getBlue().getCardsList(), game.getBoard()));
                     }
                     try {
                         ws.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier1)));

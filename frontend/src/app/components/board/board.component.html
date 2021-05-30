@@ -1,0 +1,8 @@
+<div style="display: flex; flex-direction: column">
+  <div *ngFor="let row of board.board" style="display: flex; flex-direction: row">
+    <div class="card" *ngFor="let card of row">
+      <p>{{getCardName(card.cardSuitNum)}}</p>
+      <p *ngIf="getCardName(card.cardSuitNum) !== 'Free space'">Occupied by: {{card.occupancy}}</p>
+    </div>
+  </div>
+</div>

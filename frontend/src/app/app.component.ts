@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "./services/api.service";
 import {Constants} from "./constants";
 import {Card} from "./models/card";
+import {Board} from "./models/board";
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
   title = 'frontend';
   message = 'Joining game...';
   cards: Card[];
+  board: Board;
 
   constructor(private apiService: ApiService) {
   }
@@ -24,6 +26,7 @@ export class AppComponent implements OnInit {
           break;
         case Constants.START_GAME_RES_TYPE:
           this.cards = res.body.hand;
+          this.board = res.body.board;
           break;
         case Constants.ERROR_RES_TYPE:
           this.message = res.body.error;
