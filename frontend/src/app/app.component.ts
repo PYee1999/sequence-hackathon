@@ -37,4 +37,8 @@ export class AppComponent implements OnInit {
       name: 'Testing player'
     });
   }
+
+  cardSelected(card: Card) {
+    console.log("Selected card:", card);
+  }
 }
