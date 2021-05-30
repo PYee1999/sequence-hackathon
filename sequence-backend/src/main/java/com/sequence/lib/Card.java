@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Card {
 
-    private int cardID;         // Unique Id for Card
+    private int cardID;      // Unique Id for Card
     private int cardSuitNum; // Suit & Number for card
 
     public Card(int cardID, int cardSuitNum) {
