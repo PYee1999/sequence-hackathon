@@ -44,6 +44,11 @@ public class WebSocket extends TextWebSocketHandler {
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+        Player p = sessions.get(session);
+        if(p != null) {
+            game = new Game();
+            player = Constants.PLAYER_RED;
+        }
         sessions.remove(session);
         super.afterConnectionClosed(session, status);
     }

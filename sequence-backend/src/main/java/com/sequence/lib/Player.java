@@ -61,8 +61,8 @@ public class Player {
 
     }
 
-    public void selectSpace() {
+    public Space selectSpace() {
         // TODO: select space logic
-
+        return null;
     }
 }
