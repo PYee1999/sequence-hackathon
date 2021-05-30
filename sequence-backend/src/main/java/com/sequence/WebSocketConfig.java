@@ -1,4 +1,4 @@
-package com.example;
+package com.sequence;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;

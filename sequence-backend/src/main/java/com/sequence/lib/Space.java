@@ -1,4 +1,4 @@
-package com.example.lib;
+package com.sequence.lib;
 
 public class Space {
 

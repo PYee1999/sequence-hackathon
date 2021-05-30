@@ -1,8 +1,7 @@
-package com.example.lib;
+package com.sequence.lib;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Board {
 

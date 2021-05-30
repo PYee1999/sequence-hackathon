@@ -1,10 +1,10 @@
-package com.example;
+package com.sequence;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import com.example.lib.Game;
+import com.sequence.lib.Game;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.socket.CloseStatus;

@@ -1,4 +1,4 @@
-package com.example;
+package com.sequence;
 
 public class Constants {
     public static final int SPADES = 1;

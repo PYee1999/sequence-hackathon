@@ -1,4 +1,4 @@
-package com.example.lib;
+package com.sequence.lib;
 
 import java.util.ArrayList;
 import java.util.List;
