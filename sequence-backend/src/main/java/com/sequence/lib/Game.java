@@ -1,6 +1,7 @@
-package com.sequence.lib;
+package com.sequence;
 
 import java.util.Random;
+import static com.sequence.Constants.*;
 
 public class Game {
     private Board board;
@@ -19,6 +20,9 @@ public class Game {
         board.initBoard();
         deck.initDeck();
         deck.shuffle();
+        red = new Player(board, deck, PLAYER_RED);
+        blue = new Player(board, deck, PLAYER_BLUE);
+
         for (int i = 0; i < 7; i++) {
             red.addCard(deck.deal());
         }
