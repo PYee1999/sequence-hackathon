@@ -210,23 +210,19 @@ public class Board {
 
         if (sequenceFound) {
             if (player.getSequenceCounter() == 1) { // If you have 1 sequence found previously,
-                // TODO: need to check for any intersections.
-                AtomicInteger intersections = new AtomicInteger();
-                newSequenceList.forEach(val -> {
+                int intersections = 0;
+                for(Space val : newSequenceList) {
                     if (player.getSequenceList().contains(val)) {
-                        intersections.getAndIncrement();
+                        intersections++;
                     }
-                });
-                if (intersections.get() > 1) {
-                    // TODO: logic for intersection
+                };
+                if (intersections <= 1) {
+                    player.setSequenceCounter(2);
                 }
             } else { // Otherwise, if you have 0 sequences previously,
                 player.setSequenceCounter(1); // Set sequence counter to 1.
                 player.setSequenceList(newSequenceList);
-                // TODO: Add new sequence to player's sequence.
             }
-
-            // TODO: Check if it is 1st or 2nd sequence found
             // If first, increment and add into the list.
             // If second, check if there is any intersection with the first
             //      If there is intersection, check that the intersection is only 1 space
