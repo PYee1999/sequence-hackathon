@@ -69,6 +69,7 @@ public class Player {
         return chosen;
     }
 
+    // Selects the space available for the given card
     public Space selectSpace(Card card) {
         // If the card is a two-eyed jack(wild card), go to youChoose()
         if((card.getCardSuitNum() == 211) || (card.getCardSuitNum() == 311) ) {
@@ -87,7 +88,6 @@ public class Player {
         // Check the whole board to see if there are any non-occupied spaces
         for(int i = 0; i < 10; i++) {
             for(int j = 0; j < 10; j++) {
-
                 if (card.getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum() &&
                         board.getBoard()[i][j].getOccupancy() == 0) {
                     if (choice1 == null) {
@@ -101,18 +101,18 @@ public class Player {
             }
         }
 
-        // Pick one space of the two spaces
-        if (spacesFound == 2) {
+        if (spacesFound == 2) { // Pick one space of the two spaces
             return pickOne(choice1, choice2);
-
-            // Automatically pick the only space
-        } else if (spacesFound == 1) {
+        } else if (spacesFound == 1) { // Automatically pick the only space
             return choice1;
-
-            // Dead Card
-        } else {
+        } else { // Dead Card
             return null;
         }
+    }
+
+    // Checks for any dead cards
+    public void checkDeadCards() {
+
     }
 
     // Outputs chosen space from 2 spaces

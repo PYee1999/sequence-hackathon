@@ -1,6 +1,5 @@
 package com.sequence.lib;
 
-
 import java.util.Collections;
 import java.util.LinkedList;
 

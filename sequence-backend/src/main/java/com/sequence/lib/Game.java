@@ -33,9 +33,12 @@ public class Game {
 
     public void nextTurn(Card card) {
         Player currentPlayer = redsTurn ? red : blue;
+
+        // TODO: check for dead card
+        currentPlayer.checkDeadCards();
+
         currentPlayer.selectCard(card);
-        currentPlayer.takeMarker();
-        Space chosenSpace = currentPlayer.selectSpace(); // TODO: Need to check that selectSpace() returns Space
+        Space chosenSpace = currentPlayer.selectSpace(card);
         currentPlayer.addCard(deck.deal());
         int win = board.checkSequence(chosenSpace.getxLocation(), chosenSpace.getyLocation(), currentPlayer);
         if (win == 2) {
