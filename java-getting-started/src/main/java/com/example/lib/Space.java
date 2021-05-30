@@ -1,4 +1,4 @@
-package com.example;
+package com.example.lib;
 
 public class Space {
 
@@ -10,7 +10,7 @@ public class Space {
     public Space(int xLocation, int yLocation, int cardSuitNum, int occupancy) {
         this.xLocation = xLocation;
         this.yLocation = yLocation;
-        this.cardSuitNum= cardSuitNum;
+        this.cardSuitNum = cardSuitNum;
         this.occupancy = occupancy;
     }
 

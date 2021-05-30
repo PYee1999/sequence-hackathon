@@ -1,9 +1,14 @@
-package com.example;
+package com.example.lib;
 
 public class Card {
 
     private int cardID;         // Unique Id for Card
     private int cardSuitNum; // Suit & Number for card
+
+    public Card(int cardID, int cardSuitNum) {
+        this.cardID = cardID;
+        this.cardSuitNum = cardSuitNum;
+    }
 
     public int getCardID() {
         return cardID;
