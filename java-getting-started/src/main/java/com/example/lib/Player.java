@@ -22,15 +22,18 @@ public class Player {
         cardsList.add(card);
     }
 
-    public void selectCard() {
+    public Card selectCard(Card card) {
         // TODO: select card logic
+
     }
 
     public void takeMarker() {
         // TODO: take marker logic
+
     }
 
     public void selectSpace() {
         // TODO: select space logic
+
     }
 }
