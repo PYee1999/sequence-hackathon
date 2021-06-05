@@ -17,15 +17,18 @@ public class Game {
     }
 
     public void startGame() {
-        board.initBoard();
-        deck.initDeck();
-        deck.shuffle();
-        red = new Player(board, deck, PLAYER_RED);
-        blue = new Player(board, deck, PLAYER_BLUE);
+        board.initBoard();  // Initialize board
+        deck.initDeck();    // Initialize deck
+        deck.shuffle();     // Shuffle deck
+        red = new Player(board, deck, PLAYER_RED);      // Initialize red player
+        blue = new Player(board, deck, PLAYER_BLUE);    // Initialize blue player
 
+        // Get 7 cards for red player from deck
         for (int i = 0; i < 7; i++) {
             red.addCard(deck.deal());
         }
+
+        // Get 7 cards for blue player from deck
         for (int i = 0; i < 7; i++) {
             blue.addCard(deck.deal());
         }
@@ -37,14 +40,18 @@ public class Game {
         currentPlayer.addCard(deck.deal()); // Add new card to player's hand from deck
     }
 
-    public void selectSpace(Card card) {
-        Player currentPlayer = redsTurn ? red : blue;
-        Space chosenSpace = currentPlayer.selectSpace(card);
+    public int selectSpace(Card card) {
+        Player currentPlayer = redsTurn ? red : blue;   // Get player
+        Space chosenSpace = currentPlayer.selectSpace(card); // Get space chosen by player
+
+        // Check if there is a win on the board, after player makes move on board
         int win = board.checkSequence(chosenSpace.getxLocation(), chosenSpace.getyLocation(), currentPlayer);
         if (win == 2) {
-            // TODO: Declare winner
+            // If a player wins, return the player's marker integer (1 or -1 for red or blue)
+            return currentPlayer.getPlayerMarker();
         }
         redsTurn = !redsTurn;
+        return 0; // Return 0 if there is no winner yet
     }
 
     public Board getBoard() {
