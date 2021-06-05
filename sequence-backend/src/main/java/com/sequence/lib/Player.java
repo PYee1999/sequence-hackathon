@@ -134,7 +134,37 @@ public class Player {
     // Checks for any dead cards
     public void checkDeadCards() {
 
+        // Checks every single space on the board, as well as every card in the deck for a match
+        for(int i = 0; i < board.getBoard().length; i++) {
+            for(int j = 0; j < board.getBoard()[i].length; j++) {
+                for(int k = 0; k < cardsList.size(); k++) {
+                    //System.out.println("begining of index " + k + " at i,j: " + i + "," + j);
+
+                    // If there's a occupied card space that matches a deck card, check for duplicates. Also, in the rare
+                    // occurance where the added card is a dead card, it goes through this process again.
+                    while((cardsList.get(k).getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum())
+                            && (board.getBoard()[i][j].getOccupancy() != 0)) {
+
+                        // If there's a occupied space with the exact card name, verify that the next space isn't occupied
+                        for(int x = i; x < board.getBoard().length; x++) {
+                            for(int y = j; y < board.getBoard()[i].length; y++) {
+
+                                // If the other space is occupied, delete dead card from deck and get a new card.
+                                if((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
+                                        && (board.getBoard()[x][y].getOccupancy() != 0)){
+                                    //System.out.println("Time to remove");
+                                    cardsList.remove(k);
+                                    cardsList.add(deck.deal());
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
 
     // Outputs chosen space from 2 spaces
     public Space pickOne(Space option1, Space option2) {
