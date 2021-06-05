@@ -60,8 +60,13 @@ public class Player {
     public Space takeMarker() {
         Space chosen = youChoose(); // Select space on board
 
-        // Have player reselect space if the space contains player's own marker or no marker
-        while (chosen.getOccupancy() == playerMarker || chosen.getOccupancy() == 0) {
+        // Have player reselect space if the space contains player's own marker
+        while (chosen.getOccupancy() == playerMarker) {
+            chosen = youChoose();
+        }
+
+        // Have player reselect space if the space contains no marker
+        while (chosen.getOccupancy() == 0) {
             chosen = youChoose();
         }
 
