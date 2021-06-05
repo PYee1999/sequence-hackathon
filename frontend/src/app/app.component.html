@@ -1,3 +1,4 @@
 <h1>{{message}}</h1>
+<h2 *ngIf="!cards">Waiting for game to start...</h2>
 <app-board [board]="board" *ngIf="board"></app-board>
 <app-card [cards]="cards" *ngIf="cards" (cardSelected)="cardSelected($event)"></app-card>

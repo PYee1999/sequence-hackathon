@@ -1,8 +1,15 @@
-<div style="display: flex; flex-direction: column">
-  <div *ngFor="let row of board.board" style="display: flex; flex-direction: row">
-    <div class="card" *ngFor="let card of row">
-      <p>{{getCardName(card.cardSuitNum)}}</p>
-      <p *ngIf="getCardName(card.cardSuitNum) !== 'Free space'">Occupied by: {{card.occupancy}}</p>
+<div style="display: flex; flex-direction: column; margin-left: 20px">
+  <div *ngFor="let row of board.board.reverse()" style="display: flex; flex-direction: row">
+<!--    <div class="card" *ngFor="let card of row">-->
+<!--      <p>{{getCardName(card.cardSuitNum)}}</p>-->
+<!--      <p *ngIf="getCardName(card.cardSuitNum) !== 'Free space'">Occupied by: {{card.occupancy}}</p>-->
+<!--    </div>-->
+    <div class="card-container"  *ngFor="let card of row.reverse()">
+      <img [src]="'/assets/cards_png/' + card.cardSuitNum + '.png'" height="77" width="50" />
+      <div  [ngClass]="{
+        red: card.occupancy === 1,
+        blue: card.occupancy === -1
+      }"></div>
     </div>
   </div>
 </div>

@@ -1,8 +1,30 @@
-.card {
-  height: 70px;
-  width: 130px;
-  border-radius: 3px;
-  border: 1px solid black;
+.card-container {
+  width: 77px;
+  height: 50px;
   margin: 2px 5px;
-  text-align: center;
+  position: relative;
+
+  .blue {
+    position: absolute;
+    top: 28px;
+    left: 13px;
+    height: 20px;
+    width: 20px;
+    background-color: blue;
+    border-radius: 999px;
+  }
+
+  .red {
+    position: absolute;
+    top: 28px;
+    left: 13px;
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 999px;
+  }
+
+  img {
+    transform: rotate(90deg);
+  }
 }
