@@ -7,14 +7,13 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sequence.lib.Card;
 import com.sequence.lib.Game;
 import com.sequence.lib.Player;
 import com.sequence.req.JoinRequest;
 import com.sequence.req.RequestCarrier;
-import com.sequence.res.ErrorResponse;
-import com.sequence.res.JoinResponse;
-import com.sequence.res.ResponseCarrier;
-import com.sequence.res.StartGameResponse;
+import com.sequence.req.SelectCardRequest;
+import com.sequence.res.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.socket.CloseStatus;
@@ -45,7 +44,7 @@ public class WebSocket extends TextWebSocketHandler {
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
         Player p = sessions.get(session);
-        if(p != null) {
+        if (p != null) {
             game = new Game();
             player = Constants.PLAYER_RED;
         }
@@ -101,6 +100,31 @@ public class WebSocket extends TextWebSocketHandler {
                         e.printStackTrace();
                     }
                 });
+            }
+        }
+
+        if (req.getRequestType().equals(Constants.SELECT_CARD_REQ_TYPE)) {
+            SelectCardRequest selectCardRequest = mapper.readValue(req.getBody(), SelectCardRequest.class);
+            if (game.isRedsTurn() == (selectCardRequest.getPlayer() == 1)) {
+                Player player = game.isRedsTurn() ? game.getRed() : game.getBlue();
+                ResponseCarrier responseCarrier = new ResponseCarrier();
+                responseCarrier.setType(Constants.SELECT_CARD_RES_TYPE);
+                responseCarrier.setBody(
+                        new SelectCardResponse(
+                            player.listAvailableSpaces(
+                                    new Card(
+                                            selectCardRequest.getCardID(),
+                                            selectCardRequest.getCardSuitNum()
+                                    )
+                            )
+                        )
+                );
+                session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
+            } else {
+                ResponseCarrier responseCarrier = new ResponseCarrier();
+                responseCarrier.setType(Constants.ERROR_RES_TYPE);
+                responseCarrier.setBody(new ErrorResponse("It's not your turn!"));
+                session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
             }
         }
     }

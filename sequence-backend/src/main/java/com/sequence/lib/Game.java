@@ -81,4 +81,6 @@ public class Game {
     public boolean isRedsTurn() {
         return redsTurn;
     }
+
+    public void nextTurn() {redsTurn = !redsTurn;}
 }

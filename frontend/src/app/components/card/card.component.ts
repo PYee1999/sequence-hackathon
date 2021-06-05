@@ -17,8 +17,4 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getCardName(cardSuitNum: number) {
-    return this.utilService.cardRank(cardSuitNum) + ' of ' + this.utilService.cardSuit(cardSuitNum);
-  }
-
 }

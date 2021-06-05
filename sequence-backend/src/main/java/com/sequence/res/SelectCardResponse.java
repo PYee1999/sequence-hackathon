@@ -2,40 +2,23 @@ package com.sequence.res;
 
 import com.sequence.lib.Space;
 
+import java.util.List;
+
 public class SelectCardResponse implements Response {
-    private boolean multiple;
-    private Space first, second;
+    private List<Space> spaces;
 
     public SelectCardResponse() {
     }
 
-    public SelectCardResponse(boolean multiple, Space first, Space second) {
-        this.multiple = multiple;
-        this.first = first;
-        this.second = second;
+    public SelectCardResponse(List<Space> spaces) {
+        this.spaces = spaces;
     }
 
-    public boolean isMultiple() {
-        return multiple;
+    public List<Space> getSpaces() {
+        return spaces;
     }
 
-    public void setMultiple(boolean multiple) {
-        this.multiple = multiple;
-    }
-
-    public Space getFirst() {
-        return first;
-    }
-
-    public void setFirst(Space first) {
-        this.first = first;
-    }
-
-    public Space getSecond() {
-        return second;
-    }
-
-    public void setSecond(Space second) {
-        this.second = second;
+    public void setSpaces(List<Space> spaces) {
+        this.spaces = spaces;
     }
 }

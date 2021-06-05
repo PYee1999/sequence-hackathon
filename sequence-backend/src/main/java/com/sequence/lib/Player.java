@@ -116,12 +116,12 @@ public class Player {
         }
     }
 
-    public List<Space> ListAvailableSpaces(Card card){
+    public List<Space> listAvailableSpaces(Card card){
 
         List<Space> temp = new ArrayList<Space>();
 
         for(int i = 0; i < 10; i++) {
-            for(int j = 0; i < 10; j++) {
+            for(int j = 0; j < 10; j++) {
                 if((card.getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum())
                         && (board.getBoard()[i][j].getOccupancy() == 0)){
                     temp.add(board.getBoard()[i][j]);

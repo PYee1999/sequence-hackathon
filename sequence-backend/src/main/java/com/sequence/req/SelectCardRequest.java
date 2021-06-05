@@ -3,9 +3,19 @@ package com.sequence.req;
 import com.sequence.lib.Card;
 
 public class SelectCardRequest implements Request {
-    private Card card;
+    private int player;
+    private int cardID;
+    private int cardSuitNum;
 
-    public Card getCard() {
-        return card;
+    public int getCardID() {
+        return cardID;
+    }
+
+    public int getCardSuitNum() {
+        return cardSuitNum;
+    }
+
+    public int getPlayer() {
+        return player;
     }
 }
