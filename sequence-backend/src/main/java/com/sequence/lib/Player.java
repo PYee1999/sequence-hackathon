@@ -69,7 +69,7 @@ public class Player {
     // Selects the space available for the given card
     public Space selectSpace(int cardSuitNum, int x, int y) {
         // One-eyed jack
-        if((cardSuitNum == 111) || (cardSuitNum == 411) ) {
+        if ((cardSuitNum == 111) || (cardSuitNum == 411)) {
             board.getSpaceOnBoard(x, y).setOccupancy(0);
             return board.getSpaceOnBoard(x, y);
         }
@@ -77,25 +77,26 @@ public class Player {
         return board.getSpaceOnBoard(x, y);
     }
 
-    public List<Space> listAvailableSpaces(Card card, Player otherPlayer){
+    public List<Space> listAvailableSpaces(Card card, Player otherPlayer) {
 
         List<Space> temp = new ArrayList<Space>();
 
-        if(card.getCardSuitNum() == 211 ||card.getCardSuitNum() == 311) {
-            for(int i = 0; i < 10; i++) {
-                for(int j = 0; j < 10; j++) {
-                    if(board.getBoard()[i][j].getOccupancy() == 0){
+        if (card.getCardSuitNum() == 211 || card.getCardSuitNum() == 311) {
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+                    if (board.getBoard()[i][j].getOccupancy() == 0 &&
+                            board.getBoard()[i][j].getCardSuitNum() / 100 != 5) {
                         temp.add(board.getBoard()[i][j]);
                     }
                 }
             }
             return temp;
         }
-        if(card.getCardSuitNum() == 111 ||card.getCardSuitNum() == 411) {
-            for(int i = 0; i < 10; i++) {
-                for(int j = 0; j < 10; j++) {
-                    if(board.getBoard()[i][j].getOccupancy() == otherPlayer.getPlayerMarker() &&
-                            ((otherPlayer.sequenceCounter == 0) || !otherPlayer.getSequenceList().contains(board.getBoard()[i][j]))){
+        if (card.getCardSuitNum() == 111 || card.getCardSuitNum() == 411) {
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+                    if (board.getBoard()[i][j].getOccupancy() == otherPlayer.getPlayerMarker() &&
+                            ((otherPlayer.sequenceCounter == 0) || !otherPlayer.getSequenceList().contains(board.getBoard()[i][j]))) {
                         temp.add(board.getBoard()[i][j]);
                     }
                 }
@@ -103,10 +104,10 @@ public class Player {
             return temp;
         }
 
-        for(int i = 0; i < 10; i++) {
-            for(int j = 0; j < 10; j++) {
-                if((card.getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum())
-                        && (board.getBoard()[i][j].getOccupancy() == 0)){
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if ((card.getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum())
+                        && (board.getBoard()[i][j].getOccupancy() == 0)) {
                     temp.add(board.getBoard()[i][j]);
                 }
             }
@@ -118,23 +119,23 @@ public class Player {
     public void checkDeadCards() {
 
         // Checks every single space on the board, as well as every card in the deck for a match
-        for(int i = 0; i < board.getBoard().length; i++) {
-            for(int j = 0; j < board.getBoard()[i].length; j++) {
-                for(int k = 0; k < cardsList.size(); k++) {
+        for (int i = 0; i < board.getBoard().length; i++) {
+            for (int j = 0; j < board.getBoard()[i].length; j++) {
+                for (int k = 0; k < cardsList.size(); k++) {
                     //System.out.println("begining of index " + k + " at i,j: " + i + "," + j);
 
                     // If there's a occupied card space that matches a deck card, check for duplicates. Also, in the rare
                     // occurance where the added card is a dead card, it goes through this process again.
-                    while((cardsList.get(k).getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum())
+                    while ((cardsList.get(k).getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum())
                             && (board.getBoard()[i][j].getOccupancy() != 0)) {
 
                         // If there's a occupied space with the exact card name, verify that the next space isn't occupied
-                        for(int x = i; x < board.getBoard().length; x++) {
-                            for(int y = j; y < board.getBoard()[i].length; y++) {
+                        for (int x = i; x < board.getBoard().length; x++) {
+                            for (int y = j; y < board.getBoard()[i].length; y++) {
 
                                 // If the other space is occupied, delete dead card from deck and get a new card.
-                                if((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
-                                        && (board.getBoard()[x][y].getOccupancy() != 0)){
+                                if ((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
+                                        && (board.getBoard()[x][y].getOccupancy() != 0)) {
                                     //System.out.println("Time to remove");
                                     cardsList.remove(k);
                                     cardsList.add(deck.deal());

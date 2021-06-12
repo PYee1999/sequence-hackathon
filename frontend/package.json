@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod && del /F /Q ..\\sequence-backend\\src\\main\\resources\\public\\* && copy dist\\frontend\\* ..\\sequence-backend\\src\\main\\resources\\public",
+    "build": "ng build --prod && echo Manually copy dist files to public folder",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
