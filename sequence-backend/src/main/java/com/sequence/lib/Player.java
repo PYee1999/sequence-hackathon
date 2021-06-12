@@ -2,6 +2,7 @@ package com.sequence.lib;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Player {
     private int playerMarker;
@@ -56,69 +57,51 @@ public class Player {
         return null;
     }
 
-    // Turns the chosen space's occupency to 0;
-    public Space takeMarker() {
-        Space chosen = youChoose(); // Select space on board
-
-        // Have player reselect space if the space contains player's own marker
-        while (chosen.getOccupancy() == playerMarker) {
-            chosen = youChoose();
+    public Card selectCard(int card) {
+        List<Card> foundCards = cardsList.stream().filter(c -> c.getCardSuitNum() == card).collect(Collectors.toList());
+        if (foundCards.size() >= 1) {
+            cardsList.remove(foundCards.get(0));
+            return foundCards.get(0);
         }
-
-        // Have player reselect space if the space contains no marker
-        while (chosen.getOccupancy() == 0) {
-            chosen = youChoose();
-        }
-
-        int x = chosen.getxLocation(); // Get x-coordinate of selected space
-        int y = chosen.getyLocation(); // Get y-coordinate of selected space
-
-        board.getSpaceOnBoard(x, y).setOccupancy(0); // Remove opponent's marker on board
-        return chosen;
+        return null;
     }
 
     // Selects the space available for the given card
-    public Space selectSpace(Card card) {
-        // If the card is a two-eyed jack(wild card), go to youChoose()
-        if((card.getCardSuitNum() == 211) || (card.getCardSuitNum() == 311) ) {
-            return youChoose();
+    public Space selectSpace(int cardSuitNum, int x, int y) {
+        // One-eyed jack
+        if((cardSuitNum == 111) || (cardSuitNum == 411) ) {
+            board.getSpaceOnBoard(x, y).setOccupancy(0);
+            return board.getSpaceOnBoard(x, y);
         }
-
-        // If the card is a one-eyed jack(sabetour card), go to takeMarker()
-        else if((card.getCardSuitNum() == 111) || (card.getCardSuitNum() == 411) ) {
-            return takeMarker();
-        }
-
-        int spacesFound = 0;
-        Space choice1 = null;
-        Space choice2 = null;
-
-        // Check the whole board to see if there are any non-occupied spaces
-        for(int i = 0; i < 10; i++) {
-            for(int j = 0; j < 10; j++) {
-                if (card.getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum() &&
-                        board.getBoard()[i][j].getOccupancy() == 0) {
-                    // If there are spaces, update choices and spacesFound counter
-                    if (choice1 == null) {
-                        choice1 = board.getBoard()[i][j];
-                    } else {
-                        choice2 = board.getBoard()[i][j];
-                    }
-                    spacesFound++;
-                }
-            }
-        }
-
-        if (spacesFound == 2) {                 // If there are two spaces found,
-            return pickOne(choice1, choice2);   // Pick one space of the two spaces
-        } else {                                // Otherwise,
-            return choice1;                     // Automatically pick the only space
-        }
+        board.getSpaceOnBoard(x, y).setOccupancy(playerMarker);
+        return board.getSpaceOnBoard(x, y);
     }
 
-    public List<Space> listAvailableSpaces(Card card){
+    public List<Space> listAvailableSpaces(Card card, Player otherPlayer){
 
         List<Space> temp = new ArrayList<Space>();
+
+        if(card.getCardSuitNum() == 211 ||card.getCardSuitNum() == 311) {
+            for(int i = 0; i < 10; i++) {
+                for(int j = 0; j < 10; j++) {
+                    if(board.getBoard()[i][j].getOccupancy() == 0){
+                        temp.add(board.getBoard()[i][j]);
+                    }
+                }
+            }
+            return temp;
+        }
+        if(card.getCardSuitNum() == 111 ||card.getCardSuitNum() == 411) {
+            for(int i = 0; i < 10; i++) {
+                for(int j = 0; j < 10; j++) {
+                    if(board.getBoard()[i][j].getOccupancy() == otherPlayer.getPlayerMarker() &&
+                            ((otherPlayer.sequenceCounter == 0) || !otherPlayer.getSequenceList().contains(board.getBoard()[i][j]))){
+                        temp.add(board.getBoard()[i][j]);
+                    }
+                }
+            }
+            return temp;
+        }
 
         for(int i = 0; i < 10; i++) {
             for(int j = 0; j < 10; j++) {
@@ -163,5 +146,10 @@ public class Player {
                 }
             }
         }
+    }
+
+    public boolean removeCard(int cardSuitNum) {
+        return cardsList.remove(
+                cardsList.stream().filter(c -> c.getCardSuitNum() == cardSuitNum).collect(Collectors.toList()).get(0));
     }
 }

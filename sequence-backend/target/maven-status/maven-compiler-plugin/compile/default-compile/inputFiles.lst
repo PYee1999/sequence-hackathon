@@ -1,7 +1,6 @@
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\req\SelectSpaceRequest.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\lib\Player.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\req\JoinRequest.java
-C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\res\PickUpCardResponse.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\res\SelectCardResponse.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\Main.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\res\SelectSpaceResponse.java
@@ -9,7 +8,6 @@ C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\WebSocke
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\res\ResponseCarrier.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\Constants.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\res\Response.java
-C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\req\PickUpCardRequest.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\lib\Board.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\lib\Game.java
 C:\Anand\sequence-hackathon\sequence-backend\src\main\java\com\sequence\req\Request.java

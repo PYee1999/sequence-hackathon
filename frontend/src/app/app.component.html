@@ -1,9 +1,4 @@
 <h1>{{message}}</h1>
 <h2 *ngIf="!cards">Waiting for game to start...</h2>
-<app-board [board]="board" *ngIf="board"></app-board>
+<app-board [board]="board" [spaces]="spaces" [selectedCard]="selectedCard" *ngIf="board"></app-board>
 <app-card [cards]="cards" *ngIf="cards" (cardSelected)="cardSelected($event)"></app-card>
-<h1 *ngIf="spaces.length">Selectable spaces:
-  <span *ngFor="let space of spaces">
-    ({{space.xLocation}}, {{space.yLocation}}): {{getCardName(space.cardSuitNum)}};
-  </span>
-</h1>

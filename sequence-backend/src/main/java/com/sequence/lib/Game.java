@@ -40,9 +40,9 @@ public class Game {
         currentPlayer.addCard(deck.deal()); // Add new card to player's hand from deck
     }
 
-    public int selectSpace(Card card) {
+    public int selectSpace(int cardSuitNum, int x, int y) {
         Player currentPlayer = redsTurn ? red : blue;   // Get player
-        Space chosenSpace = currentPlayer.selectSpace(card); // Get space chosen by player
+        Space chosenSpace = currentPlayer.selectSpace(cardSuitNum, x, y); // Get space chosen by player
 
         // Check if there is a win on the board, after player makes move on board
         int win = board.checkSequence(chosenSpace.getxLocation(), chosenSpace.getyLocation(), currentPlayer);
@@ -50,7 +50,7 @@ public class Game {
             // If a player wins, return the player's marker integer (1 or -1 for red or blue)
             return currentPlayer.getPlayerMarker();
         }
-        redsTurn = !redsTurn;
+        nextTurn();
         return 0; // Return 0 if there is no winner yet
     }
 
@@ -80,6 +80,18 @@ public class Game {
 
     public boolean isRedsTurn() {
         return redsTurn;
+    }
+
+    public int getCurrentPlayerNum() {
+        return redsTurn ? 1 : -1;
+    }
+
+    public Player getCurrentPlayer() {
+        return redsTurn ? red : blue;
+    }
+
+    public Player getOtherPlayer() {
+        return redsTurn ? blue : red;
     }
 
     public void nextTurn() {redsTurn = !redsTurn;}

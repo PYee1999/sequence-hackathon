@@ -21,7 +21,7 @@ public class Board {
 
     // Get specified space on board
     public Space getSpaceOnBoard(int x, int y) {
-        return board[y][x];
+        return board[x][y];
     }
 
     // Initialize board by populating the Spaces.

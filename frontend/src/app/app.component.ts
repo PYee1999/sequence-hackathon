@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from "./services/api.service";
-import {Constants} from "./constants";
-import {Card} from "./models/card";
-import {Board} from "./models/board";
-import {Space} from "./models/space";
-import {UtilService} from "./services/util.service";
+import {ApiService} from './services/api.service';
+import {Constants} from './constants';
+import {Card} from './models/card';
+import {Board} from './models/board';
+import {Space} from './models/space';
+import {UtilService} from './services/util.service';
 
 @Component({
   selector: 'app-root',
@@ -18,15 +18,17 @@ export class AppComponent implements OnInit {
   cards: Card[];
   spaces: Space[] = [];
   board: Board;
+  selectedCard: Card;
 
   constructor(private apiService: ApiService, private utilService: UtilService) {
   }
 
   ngOnInit() {
     this.apiService.socket.subscribe(res => {
+      console.log(res);
       switch (res.type) {
         case Constants.JOIN_RES_TYPE:
-          this.player = res.body.player;
+          this.player = this.utilService.player = res.body.player;
           this.message = this.player === Constants.PLAYER_RED ? 'You are the RED player' : 'You are the BLUE player';
           break;
         case Constants.START_GAME_RES_TYPE:
@@ -35,6 +37,16 @@ export class AppComponent implements OnInit {
           break;
         case Constants.SELECT_CARD_RES_TYPE:
           this.spaces = res.body.spaces;
+          break;
+        case Constants.SELECT_SPACE_RES_TYPE:
+          this.board = res.body.board;
+          this.spaces = [];
+          if(res.body.winner !== 0) {
+            this.message = (res.body.winner === 1 ? 'Red' : 'Blue') + ' wins!';
+          }
+          if(res.body.currentPlayer !== this.player) {
+            this.cards = res.body.hand;
+          }
           break;
         case Constants.ERROR_RES_TYPE:
           this.message = res.body.error;
@@ -47,10 +59,11 @@ export class AppComponent implements OnInit {
   }
 
   cardSelected(card: Card) {
+    this.selectedCard = card;
     this.apiService.sendObject(Constants.SELECT_CARD_REQ_TYPE, {
       player: this.player,
       ...card
-    })
+    });
   }
 
   getCardName(cardSuitNum: number) {

@@ -4,7 +4,6 @@ com\sequence\lib\Deck.class
 com\sequence\res\ResponseCarrier.class
 com\sequence\res\Response.class
 com\sequence\res\SelectCardResponse.class
-com\sequence\res\PickUpCardResponse.class
 com\sequence\WebSocketConfig.class
 com\sequence\lib\Game.class
 com\sequence\res\StartGameResponse.class
@@ -14,7 +13,6 @@ com\sequence\req\SelectSpaceRequest.class
 com\sequence\res\ErrorResponse.class
 com\sequence\lib\Card.class
 com\sequence\req\RequestCarrier.class
-com\sequence\req\PickUpCardRequest.class
 com\sequence\lib\Player.class
 com\sequence\res\JoinResponse.class
 com\sequence\Main.class

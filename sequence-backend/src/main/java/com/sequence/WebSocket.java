@@ -1,10 +1,7 @@
 package com.sequence;
 
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sequence.lib.Card;
@@ -13,6 +10,7 @@ import com.sequence.lib.Player;
 import com.sequence.req.JoinRequest;
 import com.sequence.req.RequestCarrier;
 import com.sequence.req.SelectCardRequest;
+import com.sequence.req.SelectSpaceRequest;
 import com.sequence.res.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -107,6 +105,7 @@ public class WebSocket extends TextWebSocketHandler {
             SelectCardRequest selectCardRequest = mapper.readValue(req.getBody(), SelectCardRequest.class);
             if (game.isRedsTurn() == (selectCardRequest.getPlayer() == 1)) {
                 Player player = game.isRedsTurn() ? game.getRed() : game.getBlue();
+                Player otherPlayer = !game.isRedsTurn() ? game.getRed() : game.getBlue();
                 ResponseCarrier responseCarrier = new ResponseCarrier();
                 responseCarrier.setType(Constants.SELECT_CARD_RES_TYPE);
                 responseCarrier.setBody(
@@ -115,7 +114,7 @@ public class WebSocket extends TextWebSocketHandler {
                                     new Card(
                                             selectCardRequest.getCardID(),
                                             selectCardRequest.getCardSuitNum()
-                                    )
+                                    ), otherPlayer
                             )
                         )
                 );
@@ -126,6 +125,30 @@ public class WebSocket extends TextWebSocketHandler {
                 responseCarrier.setBody(new ErrorResponse("It's not your turn!"));
                 session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
             }
+        }
+
+        if(req.getRequestType().equals(Constants.SELECT_SPACE_REQ_TYPE)) {
+            SelectSpaceRequest selectSpaceRequest = mapper.readValue(req.getBody(), SelectSpaceRequest.class);
+            if(selectSpaceRequest.getPlayer() != game.getCurrentPlayerNum()) {
+                ResponseCarrier responseCarrier = new ResponseCarrier();
+                responseCarrier.setType(Constants.ERROR_RES_TYPE);
+                responseCarrier.setBody(new ErrorResponse("It's not your turn!"));
+                session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
+            }
+            game.getCurrentPlayer().removeCard(selectSpaceRequest.getCard());
+            game.getCurrentPlayer().addCard(game.getDeck().deal());
+            int winner = game.selectSpace(selectSpaceRequest.getCard(), selectSpaceRequest.getX(), selectSpaceRequest.getY());
+            ResponseCarrier responseCarrier = new ResponseCarrier();
+            responseCarrier.setType(Constants.SELECT_SPACE_RES_TYPE);
+            responseCarrier.setBody(new SelectSpaceResponse(winner, game.getCurrentPlayerNum(), game.getBoard(),
+                    game.getOtherPlayer().getCardsList()));
+            sessions.forEach((ws, player) -> {
+                try {
+                    ws.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
         }
     }
 

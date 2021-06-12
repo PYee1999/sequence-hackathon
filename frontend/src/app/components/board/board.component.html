@@ -4,12 +4,12 @@
 <!--      <p>{{getCardName(card.cardSuitNum)}}</p>-->
 <!--      <p *ngIf="getCardName(card.cardSuitNum) !== 'Free space'">Occupied by: {{card.occupancy}}</p>-->
 <!--    </div>-->
-    <div class="card-container"  *ngFor="let card of row.reverse()">
-      <img [src]="'/assets/cards_png/' + card.cardSuitNum + '.png'" height="77" width="50" />
-      <div  [ngClass]="{
-        red: card.occupancy === 1,
-        blue: card.occupancy === -1
-      }"></div>
+    <div class="card-container" *ngFor="let card of row.reverse()"
+         (click)="selectSpace(card.xLocation, card.yLocation, selectedCard.cardSuitNum)">
+      <img [src]="'/assets/cards_png/' + card.cardSuitNum + '.png'" height="77" width="50" class="card"
+           [class.bordered]="selectable(card)" />
+      <img *ngIf="card.occupancy" class="chip" [src]="card.occupancy === 1 ?
+      '/assets/cards_png/markerchips/red_marker_chip_faceup.png' : '/assets/cards_png/markerchips/blue_marker_chip_faceup.png'" />
     </div>
   </div>
 </div>
