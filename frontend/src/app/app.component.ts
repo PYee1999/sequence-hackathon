@@ -13,8 +13,16 @@ import {UtilService} from './services/util.service';
 })
 export class AppComponent implements OnInit {
   title = 'frontend';
-  message = 'Joining game...';
-  player: number;
+  joining = true;
+  _message = '';
+  get message() {
+    return this._message;
+  }
+  set message(value: string) {
+    this._message = value;
+    setTimeout(() => this._message = '', 5000)
+  }
+  player = 0;
   cards: Card[];
   spaces: Space[] = [];
   board: Board;
@@ -29,7 +37,7 @@ export class AppComponent implements OnInit {
       switch (res.type) {
         case Constants.JOIN_RES_TYPE:
           this.player = this.utilService.player = res.body.player;
-          this.message = this.player === Constants.PLAYER_RED ? 'You are the RED player' : 'You are the BLUE player';
+          this.joining = false;
           break;
         case Constants.START_GAME_RES_TYPE:
           this.cards = res.body.hand;
