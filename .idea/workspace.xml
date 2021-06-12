@@ -2,7 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d0c6d1-e276-402e-8e35-a079860d6cb5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/106.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/107.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/109.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/110.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/112.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/113.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/201.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/202.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/203.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/204.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/205.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/206.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/207.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/208.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/209.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/210.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/211.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/212.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/213.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/301.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/302.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/303.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/304.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/305.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/306.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/307.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/308.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/309.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/310.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/311.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/312.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/313.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/401.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/402.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/403.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/405.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/406.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/407.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/408.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/409.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/410.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/411.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/412.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/413.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/501.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/502.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/503.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/504.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/cardtops/card_top-green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/cardtops/card_top_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/blue_marker_chip_faceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/blue_marker_chip_sequenceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/green_marker_chip_faceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/green_marker_chip_sequenceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/red_marker_chip_faceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/red_marker_sequenceup.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence-backend/target/classes/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/target/classes/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +82,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="2" />
-          <entry key="java" value="5" />
+          <entry key="java" value="6" />
           <entry key="ts" value="2" />
           <entry key="xml" value="1" />
         </counts>
@@ -22,19 +90,19 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="JAVA" value="5" />
+          <entry key="JAVA" value="6" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1285" />
+          <entry key="java" value="1286" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1285" />
+          <entry key="JAVA" value="1286" />
         </counts>
       </usages-collector>
     </session>
@@ -80,57 +148,49 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
-              <folding>
-                <element signature="method#Player#0;class#Player#0" />
-                <element signature="method#selectCard#0;class#Player#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#Game#0;class#Game#0" />
-                <element signature="method#startGame#0;class#Game#0" />
-                <element signature="method#selectCard#0;class#Game#0" />
-                <element signature="method#selectSpace#0;class#Game#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-243">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="437">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/res/SelectCardResponse.java">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="263" lean-forward="true" selection-start-line="263" selection-end-line="263" />
+            <state relative-caret-position="174">
+              <caret line="153" selection-start-line="153" selection-end-line="153" />
               <folding>
                 <element signature="method#initBoard#0;class#Board#0" />
-                <element signature="method#checkSequence#0;class#Board#0" />
+                <element signature="method#checkNextSquare#0;class#Board#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#0#928#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+              <folding>
+                <element signature="method#Player#0;class#Player#0" />
+                <element signature="method#checkDeadCards#0;class#Player#0" />
+                <element signature="method#removeCard#0;class#Player#0" />
               </folding>
             </state>
           </provider>
@@ -172,9 +232,9 @@
         <option value="$PROJECT_DIR$/java-getting-started/src/main/java/com/example/lib/Board.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/Constants.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Card.java" />
-        <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Game.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java" />
+        <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java" />
       </list>
     </option>
   </component>
@@ -370,7 +430,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1622385097449" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1623518720476" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -1150,6 +1210,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.WebSocket" />
@@ -1310,12 +1417,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/Main.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Card.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="342">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
-            <element signature="e#0#928#0" expanded="true" />
+            <element signature="method#Card#0;class#Card#0" />
+            <element signature="method#equals#0;class#Card#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Game#0;class#Game#0" />
+            <element signature="method#startGame#0;class#Game#0" />
+            <element signature="method#selectCard#0;class#Game#0" />
+            <element signature="method#selectSpace#0;class#Game#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/res/SelectCardResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1329,40 +1462,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="method#Card#0;class#Card#0" />
-            <element signature="method#equals#0;class#Card#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="263" lean-forward="true" selection-start-line="263" selection-end-line="263" />
-          <folding>
-            <element signature="method#initBoard#0;class#Board#0" />
-            <element signature="method#checkSequence#0;class#Board#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="437">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/res/SelectCardResponse.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Deck.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1376,27 +1481,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Game.java">
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="174">
+          <caret line="153" selection-start-line="153" selection-end-line="153" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Game#0;class#Game#0" />
-            <element signature="method#startGame#0;class#Game#0" />
-            <element signature="method#selectCard#0;class#Game#0" />
-            <element signature="method#selectSpace#0;class#Game#0" />
+            <element signature="method#initBoard#0;class#Board#0" />
+            <element signature="method#checkNextSquare#0;class#Board#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#928#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+        <state relative-caret-position="346">
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
           <folding>
             <element signature="method#Player#0;class#Player#0" />
-            <element signature="method#selectCard#0;class#Player#0" />
+            <element signature="method#checkDeadCards#0;class#Player#0" />
+            <element signature="method#removeCard#0;class#Player#0" />
           </folding>
         </state>
       </provider>
