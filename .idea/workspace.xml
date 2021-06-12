@@ -2,7 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d0c6d1-e276-402e-8e35-a079860d6cb5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/106.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/107.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/109.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/110.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/112.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/113.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/201.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/202.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/203.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/204.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/205.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/206.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/207.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/208.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/209.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/210.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/211.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/212.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/213.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/301.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/302.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/303.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/304.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/305.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/306.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/307.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/308.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/309.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/310.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/311.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/312.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/313.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/401.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/402.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/403.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/405.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/406.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/407.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/408.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/409.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/410.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/411.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/412.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/413.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/501.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/502.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/503.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/504.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/cardtops/card_top-green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/cardtops/card_top_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/blue_marker_chip_faceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/blue_marker_chip_sequenceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/green_marker_chip_faceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/green_marker_chip_sequenceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/red_marker_chip_faceup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sequence-backend/src/main/resources/public/assets/cards_png/markerchips/red_marker_sequenceup.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence-backend/target/classes/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/target/classes/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +170,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -114,26 +182,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+            <state relative-caret-position="346">
+              <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
               <folding>
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#658#659#0" expanded="true" />
-                <element signature="e#694#695#0" expanded="true" />
-                <element signature="e#729#730#0" expanded="true" />
-                <element signature="e#768#769#0" expanded="true" />
-                <element signature="e#806#807#0" expanded="true" />
-                <element signature="e#853#854#0" expanded="true" />
-                <element signature="e#890#891#0" expanded="true" />
-                <element signature="e#930#931#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#1006#1007#0" expanded="true" />
-                <element signature="e#1041#1042#0" expanded="true" />
-                <element signature="e#1093#1094#0" expanded="true" />
-                <element signature="e#1127#1128#0" expanded="true" />
+                <element signature="method#Player#0;class#Player#0" />
+                <element signature="method#checkDeadCards#0;class#Player#0" />
+                <element signature="method#removeCard#0;class#Player#0" />
               </folding>
             </state>
           </provider>
@@ -373,7 +430,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1623516885448" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1623518720476" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -1233,7 +1290,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
@@ -1395,29 +1452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding>
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-            <element signature="e#1006#1007#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="e#1127#1128#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Space.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1464,6 +1498,18 @@
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+          <folding>
+            <element signature="method#Player#0;class#Player#0" />
+            <element signature="method#checkDeadCards#0;class#Player#0" />
+            <element signature="method#removeCard#0;class#Player#0" />
           </folding>
         </state>
       </provider>
