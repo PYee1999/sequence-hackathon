@@ -164,7 +164,7 @@ public class Board {
                         checkNextSquare(x, y, MOVE_RIGHT, STAY, player.getPlayerMarker(), 5);
                 if (totalXCount < 5) {
                     totalXCount +=
-                        checkNextSquare(x, y, MOVE_LEFT, STAY, player.getPlayerMarker(), 5 - totalXCount);
+                        checkNextSquare(x-1, y, MOVE_LEFT, STAY, player.getPlayerMarker(), 5 - totalXCount);
                 }
                 if (totalXCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -178,7 +178,7 @@ public class Board {
                         checkNextSquare(x, y, STAY, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalYCount < 5) {
                     totalYCount +=
-                        checkNextSquare(x, y, STAY, MOVE_DOWN, player.getPlayerMarker(), 5 - totalYCount);
+                        checkNextSquare(x, y-1, STAY, MOVE_DOWN, player.getPlayerMarker(), 5 - totalYCount);
                 }
                 if (totalYCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -192,7 +192,7 @@ public class Board {
                         checkNextSquare(x, y, MOVE_LEFT, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalLDiagonalCount < 5) {
                     totalLDiagonalCount +=
-                        checkNextSquare(x, y, MOVE_RIGHT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalLDiagonalCount);
+                        checkNextSquare(x+1, y-1, MOVE_RIGHT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalLDiagonalCount);
                 }
                 if (totalLDiagonalCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -206,7 +206,7 @@ public class Board {
                         checkNextSquare(x, y, MOVE_RIGHT, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalRDiagonalCount < 5) {
                     totalRDiagonalCount +=
-                        checkNextSquare(x, y, MOVE_LEFT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalRDiagonalCount);
+                        checkNextSquare(x-1, y-1, MOVE_LEFT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalRDiagonalCount);
                 }
                 if (totalRDiagonalCount == 5) { // If you have a sequence,
                     sequenceFound = true; // Set sequenceFound to be true
@@ -231,11 +231,22 @@ public class Board {
                 player.setSequenceList(newSequenceList); // Save sequence
             }
         }
+
+        System.out.print("PLAYER: " + player.getPlayerMarker() + ", ");
+        System.out.print("TOTAL SEQUENCES: " + player.getSequenceCounter() + ", ");
+        player.printSeqList();
+
         return player.getSequenceCounter();
     }
 
     // Helper recursive method to find adjacent spaces with same marker to find possible sequence
     public int checkNextSquare(int x, int y, int xMove, int yMove, int playerMarker, int maxDist) {
+
+        // Check if x and y are out of bounds.
+        if (x < 0 || x > 9 || y < 0 || y > 9) {
+            return 0; // If so, return 0 and stop recursing
+        }
+        
         // Check if we have reach the maximum distance.
         if (maxDist <= 0) {
             return 0; // If so, return 0 and stop recursing

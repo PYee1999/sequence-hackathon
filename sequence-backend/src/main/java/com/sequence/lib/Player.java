@@ -153,4 +153,15 @@ public class Player {
         return cardsList.remove(
                 cardsList.stream().filter(c -> c.getCardSuitNum() == cardSuitNum).collect(Collectors.toList()).get(0));
     }
+
+    public void printSeqList() {
+        System.out.print("SEQUENCE LIST: { ");
+        if (sequenceList != null) {
+            for (int i = 0; i < sequenceList.size(); i++) {
+                System.out.print("(" + sequenceList.get(i).getxLocation() + ", " + sequenceList.get(i).getyLocation() + ") ");
+            }
+        }
+        System.out.println("}");
+    }
+
 }
