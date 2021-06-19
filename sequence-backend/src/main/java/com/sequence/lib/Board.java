@@ -265,7 +265,11 @@ public class Board {
             (getSpaceOnBoard(x, y).getCardSuitNum() == 502) ||
             (getSpaceOnBoard(x, y).getCardSuitNum() == 503) ||
             (getSpaceOnBoard(x, y).getCardSuitNum() == 504)) {
-            return 1; // If so, count it by returning 1 and stop recursing
+
+            // Add sequence to list to keep track.
+            newSequenceList.add(new Space(x, y, getSpaceOnBoard(x, y).getCardSuitNum(), getSpaceOnBoard(x, y).getOccupancy()));
+
+            return 1; // Count it by returning 1 and stop recursing
         }
 
         // Check if the space has the same marker as the player
@@ -278,6 +282,10 @@ public class Board {
                 (x == 9 && xMove > 0) ||    // Check right edge
                 (y == 0 && yMove < 0) ||    // Check bottom edge
                 (y == 9 && yMove > 0)) {    // Check top edge
+            
+            // Add sequence to list to keep track.
+            newSequenceList.add(new Space(x, y, getSpaceOnBoard(x, y).getCardSuitNum(), getSpaceOnBoard(x, y).getOccupancy()));
+
             return 1; // If so, return 1 and stop recursing
         }
 
