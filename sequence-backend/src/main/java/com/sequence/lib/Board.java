@@ -238,6 +238,9 @@ public class Board {
         } else {
             System.out.print("Red,  ");
         }
+
+        System.out.print("MARKER AT: (" + x + ", " + y + "), ");
+
         System.out.print("TOTAL SEQUENCES: " + player.getSequenceCounter() + ", ");
         player.printSeqList();
 
