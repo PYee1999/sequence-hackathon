@@ -45,4 +45,7 @@ export class BoardComponent implements OnInit {
     return !!this.spaces.find(val => val.xLocation === space.xLocation && val.yLocation === space.yLocation);
   }
 
+  reverse(arr: any[]) {
+    return [...arr].reverse()
+  }
 }
