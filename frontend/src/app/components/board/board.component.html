@@ -1,10 +1,10 @@
 <div style="display: flex; flex-direction: column; margin-left: 20px">
-  <div *ngFor="let row of board.board.reverse()" style="display: flex; flex-direction: row">
+  <div *ngFor="let row of reverse(board.board)" style="display: flex; flex-direction: row">
 <!--    <div class="card" *ngFor="let card of row">-->
 <!--      <p>{{getCardName(card.cardSuitNum)}}</p>-->
 <!--      <p *ngIf="getCardName(card.cardSuitNum) !== 'Free space'">Occupied by: {{card.occupancy}}</p>-->
 <!--    </div>-->
-    <div class="card-container" *ngFor="let card of row.reverse()"
+    <div class="card-container" *ngFor="let card of reverse(row)"
          (click)="selectSpace(card.xLocation, card.yLocation, selectedCard.cardSuitNum)">
       <img [src]="'/assets/cards_png/' + card.cardSuitNum + '.png'" height="77" width="50" class="card"
            [class.bordered]="selectable(card)" />
