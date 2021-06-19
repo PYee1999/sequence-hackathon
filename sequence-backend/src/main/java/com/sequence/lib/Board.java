@@ -232,7 +232,12 @@ public class Board {
             }
         }
 
-        System.out.print("PLAYER: " + player.getPlayerMarker() + ", ");
+        System.out.print("PLAYER: ");
+        if (player.getPlayerMarker() == -1) {
+            System.out.print("Blue, ");
+        } else {
+            System.out.print("Red,  ");
+        }
         System.out.print("TOTAL SEQUENCES: " + player.getSequenceCounter() + ", ");
         player.printSeqList();
 
@@ -246,7 +251,7 @@ public class Board {
         if (x < 0 || x > 9 || y < 0 || y > 9) {
             return 0; // If so, return 0 and stop recursing
         }
-        
+
         // Check if we have reach the maximum distance.
         if (maxDist <= 0) {
             return 0; // If so, return 0 and stop recursing
