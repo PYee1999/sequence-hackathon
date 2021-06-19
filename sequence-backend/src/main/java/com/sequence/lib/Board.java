@@ -282,7 +282,7 @@ public class Board {
                 (x == 9 && xMove > 0) ||    // Check right edge
                 (y == 0 && yMove < 0) ||    // Check bottom edge
                 (y == 9 && yMove > 0)) {    // Check top edge
-            
+
             // Add sequence to list to keep track.
             newSequenceList.add(new Space(x, y, getSpaceOnBoard(x, y).getCardSuitNum(), getSpaceOnBoard(x, y).getOccupancy()));
 

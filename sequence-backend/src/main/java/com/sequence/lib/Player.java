@@ -46,7 +46,7 @@ public class Player {
     }
 
     public void setSequenceList(List<Space> val) {
-        sequenceList = val;
+        sequenceList = new ArrayList<>(val);
     }
 
     public Card selectCard(Card card) {
