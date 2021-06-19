@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {WebSocketSubject} from 'rxjs/internal-compatibility';
 import {environment} from '../../environments/environment';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import {environment} from '../../environments/environment';
 export class ApiService {
   private webSocket: WebSocketSubject<any>;
 
-  get socket() {
+  get socket(): Observable<any> {
     return this.webSocket.asObservable();
   }
 
@@ -22,7 +23,7 @@ export class ApiService {
     }
   }
 
-  sendObject(type: string, body: any) {
+  sendObject(type: string, body: any): void {
     this.webSocket.next({
       type,
       body: JSON.stringify(body)

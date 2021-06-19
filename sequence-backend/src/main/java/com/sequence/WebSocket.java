@@ -7,10 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sequence.lib.Card;
 import com.sequence.lib.Game;
 import com.sequence.lib.Player;
-import com.sequence.req.JoinRequest;
-import com.sequence.req.RequestCarrier;
-import com.sequence.req.SelectCardRequest;
-import com.sequence.req.SelectSpaceRequest;
+import com.sequence.req.*;
 import com.sequence.res.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -110,12 +107,12 @@ public class WebSocket extends TextWebSocketHandler {
                 responseCarrier.setType(Constants.SELECT_CARD_RES_TYPE);
                 responseCarrier.setBody(
                         new SelectCardResponse(
-                            player.listAvailableSpaces(
-                                    new Card(
-                                            selectCardRequest.getCardID(),
-                                            selectCardRequest.getCardSuitNum()
-                                    ), otherPlayer
-                            )
+                                player.listAvailableSpaces(
+                                        new Card(
+                                                selectCardRequest.getCardID(),
+                                                selectCardRequest.getCardSuitNum()
+                                        ), otherPlayer
+                                )
                         )
                 );
                 session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
@@ -127,9 +124,9 @@ public class WebSocket extends TextWebSocketHandler {
             }
         }
 
-        if(req.getRequestType().equals(Constants.SELECT_SPACE_REQ_TYPE)) {
+        if (req.getRequestType().equals(Constants.SELECT_SPACE_REQ_TYPE)) {
             SelectSpaceRequest selectSpaceRequest = mapper.readValue(req.getBody(), SelectSpaceRequest.class);
-            if(selectSpaceRequest.getPlayer() != game.getCurrentPlayerNum()) {
+            if (selectSpaceRequest.getPlayer() != game.getCurrentPlayerNum()) {
                 ResponseCarrier responseCarrier = new ResponseCarrier();
                 responseCarrier.setType(Constants.ERROR_RES_TYPE);
                 responseCarrier.setBody(new ErrorResponse("It's not your turn!"));
@@ -149,6 +146,21 @@ public class WebSocket extends TextWebSocketHandler {
                     e.printStackTrace();
                 }
             });
+        }
+
+        if (req.getRequestType().equals(Constants.DEAD_CARD_REQ_TYPE)) {
+            DeadCardRequest deadCardRequest = mapper.readValue(req.getBody(), DeadCardRequest.class);
+            if (deadCardRequest.getPlayer() != game.getCurrentPlayerNum()) {
+                ResponseCarrier responseCarrier = new ResponseCarrier();
+                responseCarrier.setType(Constants.ERROR_RES_TYPE);
+                responseCarrier.setBody(new ErrorResponse("It's not your turn!"));
+                session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
+            }
+            DeadCardResponse deadCardResponse = game.getCurrentPlayer().checkDeadCards();
+            ResponseCarrier responseCarrier = new ResponseCarrier();
+            responseCarrier.setType(Constants.DEAD_CARD_RES_TYPE);
+            responseCarrier.setBody(deadCardResponse);
+            session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
         }
     }
 

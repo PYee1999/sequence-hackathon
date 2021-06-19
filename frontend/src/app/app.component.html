@@ -1,5 +1,7 @@
 <h1 *ngIf="player">You are the {{player === 1 ? 'red' : 'blue'}} player.</h1>
+<h2 *ngIf="winner">{{winner === 1 ? 'Red' : 'Blue'}} wins!</h2>
 <h2 *ngIf="joining">Joining game...</h2>
+<h2 *ngIf="lobbyFull">The lobby is full. Please try again later.</h2>
 <h2>{{message}}</h2>
 <h2 *ngIf="!cards && !joining">Waiting for game to start...</h2>
 <app-board [board]="board" [spaces]="spaces" [selectedCard]="selectedCard" *ngIf="board"></app-board>

@@ -14,15 +14,20 @@ import {UtilService} from './services/util.service';
 export class AppComponent implements OnInit {
   title = 'frontend';
   joining = true;
-  _message = '';
-  get message() {
-    return this._message;
+  lobbyFull = false;
+  message_ = '';
+  get message(): string {
+    return this.message_;
   }
+
   set message(value: string) {
-    this._message = value;
-    setTimeout(() => this._message = '', 5000)
+    this.message_ = value;
+    const timeout = value.length > 80 ? 15000 : 5000;
+    setTimeout(() => this.message_ = '', timeout);
   }
+
   player = 0;
+  winner = 0;
   cards: Card[];
   spaces: Space[] = [];
   board: Board;
@@ -31,7 +36,7 @@ export class AppComponent implements OnInit {
   constructor(private apiService: ApiService, private utilService: UtilService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.apiService.socket.subscribe(res => {
       console.log(res);
       switch (res.type) {
@@ -49,15 +54,30 @@ export class AppComponent implements OnInit {
         case Constants.SELECT_SPACE_RES_TYPE:
           this.board = res.body.board;
           this.spaces = [];
-          if(res.body.winner !== 0) {
-            this.message = (res.body.winner === 1 ? 'Red' : 'Blue') + ' wins!';
+          if (res.body.winner !== 0) {
+            this.winner = res.body.winner;
           }
-          if(res.body.currentPlayer !== this.player) {
+          if (res.body.currentPlayer !== this.player) {
+            this.cards = res.body.hand;
+          } else {
+            this.checkDeadCards();
+          }
+          break;
+        case Constants.DEAD_CARD_RES_TYPE:
+          if (res.body.cardRemoved) {
+            this.message = `A dead card (${this.getCardName(res.body.oldCard.cardSuitNum)}) was removed from your deck.
+            It was replaced with ${this.getCardName(res.body.newCard.cardSuitNum)}`;
             this.cards = res.body.hand;
           }
           break;
         case Constants.ERROR_RES_TYPE:
-          this.message = res.body.error;
+          if (res.body.error.toLowerCase().includes('lobby is full')) {
+            this.lobbyFull = true;
+            this.joining = false;
+            this.cards = [];
+          } else {
+            this.message = res.body.error;
+          }
           break;
       }
     });
@@ -66,7 +86,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  cardSelected(card: Card) {
+  cardSelected(card: Card): void {
     this.selectedCard = card;
     this.apiService.sendObject(Constants.SELECT_CARD_REQ_TYPE, {
       player: this.player,
@@ -74,7 +94,13 @@ export class AppComponent implements OnInit {
     });
   }
 
-  getCardName(cardSuitNum: number) {
+  checkDeadCards(): void {
+    this.apiService.sendObject(Constants.DEAD_CARD_REQ_TYPE, {
+      player: this.player
+    });
+  }
+
+  getCardName(cardSuitNum: number): string {
     return this.utilService.cardRank(cardSuitNum) + ' of ' + this.utilService.cardSuit(cardSuitNum);
   }
 }

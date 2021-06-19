@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Board} from "../../models/board";
-import {UtilService} from "../../services/util.service";
-import {Space} from "../../models/space";
-import {ApiService} from "../../services/api.service";
-import {Constants} from "../../constants";
-import {Card} from "../../models/card";
+import {Board} from '../../models/board';
+import {UtilService} from '../../services/util.service';
+import {Space} from '../../models/space';
+import {ApiService} from '../../services/api.service';
+import {Constants} from '../../constants';
+import {Card} from '../../models/card';
 
 @Component({
   selector: 'app-board',
@@ -22,30 +22,23 @@ export class BoardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getCardName(cardSuitNum: number) {
-    if(Math.floor(cardSuitNum / 100) === 5) {
-      return 'Free space';
-    }
-    return this.utilService.cardRank(cardSuitNum) + ' of ' + this.utilService.cardSuit(cardSuitNum);
-  }
-
-  selectSpace(x:number, y: number, cardSuitNum: number) {
+  selectSpace(x: number, y: number, cardSuitNum: number): void {
     const found = this.spaces.find(val => val.xLocation === x && val.yLocation === y);
-    if(found) {
+    if (found) {
       this.apiService.sendObject(Constants.SELECT_SPACE_REQ_TYPE, {
-        x: x,
-        y: y,
+        x,
+        y,
         card: cardSuitNum,
         player: this.utilService.player
       });
     }
   }
 
-  selectable(space: Space) {
+  selectable(space: Space): boolean {
     return !!this.spaces.find(val => val.xLocation === space.xLocation && val.yLocation === space.yLocation);
   }
 
-  reverse(arr: any[]) {
-    return [...arr].reverse()
+  reverse(arr: any[]): any[] {
+    return [...arr].reverse();
   }
 }

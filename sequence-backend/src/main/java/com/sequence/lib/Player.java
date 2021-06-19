@@ -1,5 +1,7 @@
 package com.sequence.lib;
 
+import com.sequence.res.DeadCardResponse;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -77,6 +79,18 @@ public class Player {
         return board.getSpaceOnBoard(x, y);
     }
 
+    public boolean spaceInSequence(Space space) {
+        if (sequenceList == null) {
+            return false;
+        }
+        for (Space s : sequenceList) {
+            if (s.getCardSuitNum() == space.getCardSuitNum() &&
+                s.getxLocation() == space.getxLocation() &&
+                s.getyLocation() == space.getyLocation()) return true;
+        }
+        return false;
+    }
+
     public List<Space> listAvailableSpaces(Card card, Player otherPlayer) {
 
         List<Space> temp = new ArrayList<Space>();
@@ -96,7 +110,7 @@ public class Player {
             for (int i = 0; i < 10; i++) {
                 for (int j = 0; j < 10; j++) {
                     if (board.getBoard()[i][j].getOccupancy() == otherPlayer.getPlayerMarker() &&
-                            ((otherPlayer.sequenceCounter == 0) || !otherPlayer.getSequenceList().contains(board.getBoard()[i][j]))) {
+                            !otherPlayer.spaceInSequence(board.getBoard()[i][j])) {
                         temp.add(board.getBoard()[i][j]);
                     }
                 }
@@ -116,7 +130,7 @@ public class Player {
     }
 
     // Checks for any dead cards
-    public void checkDeadCards() {
+    public DeadCardResponse checkDeadCards() {
 
         // Checks every single space on the board, as well as every card in the deck for a match
         for (int i = 0; i < board.getBoard().length; i++) {
@@ -137,9 +151,11 @@ public class Player {
                                 if ((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
                                         && (board.getBoard()[x][y].getOccupancy() != 0)) {
                                     //System.out.println("Time to remove");
+                                    Card newCard = deck.deal();
+                                    Card oldCard = cardsList.get(k);
                                     cardsList.remove(k);
-                                    cardsList.add(deck.deal());
-
+                                    cardsList.add(newCard);
+                                    return new DeadCardResponse(true, oldCard, newCard, cardsList);
                                 }
                             }
                         }
@@ -147,6 +163,7 @@ public class Player {
                 }
             }
         }
+        return new DeadCardResponse(false);
     }
 
     public boolean removeCard(int cardSuitNum) {

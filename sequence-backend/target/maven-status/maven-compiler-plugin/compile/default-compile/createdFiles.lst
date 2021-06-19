@@ -1,1 +1,3 @@
-com/sequence/lib/Player.class
+com\sequence\res\DeadCardResponse.class
+com\sequence\lib\Player.class
+com\sequence\req\DeadCardRequest.class

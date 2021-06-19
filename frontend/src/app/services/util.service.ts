@@ -10,7 +10,7 @@ export class UtilService {
   constructor() {
   }
 
-  cardSuit(cardSuitNum: number) {
+  cardSuit(cardSuitNum: number): string {
     switch (Math.floor(cardSuitNum / 100)) {
       case Constants.SPADES_SUIT:
         return 'Spades';
@@ -23,7 +23,7 @@ export class UtilService {
     }
   }
 
-  cardRank(cardSuitNum: number) {
+  cardRank(cardSuitNum: number): string {
     const rank = cardSuitNum % 100;
     if (rank === 1) {
       return 'Ace';
