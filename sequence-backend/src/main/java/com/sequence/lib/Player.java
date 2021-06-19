@@ -148,14 +148,17 @@ public class Player {
                             for (int y = j; y < board.getBoard()[i].length; y++) {
 
                                 // If the other space is occupied, delete dead card from deck and get a new card.
-                                if ((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
-                                        && (board.getBoard()[x][y].getOccupancy() != 0)) {
-                                    //System.out.println("Time to remove");
-                                    Card newCard = deck.deal();
-                                    Card oldCard = cardsList.get(k);
-                                    cardsList.remove(k);
-                                    cardsList.add(newCard);
-                                    return new DeadCardResponse(true, oldCard, newCard, cardsList);
+                                // First, skip the first element, since it has already been checked
+                                if (!((x == i) && (y == j))){
+                                    if ((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
+                                            && (board.getBoard()[x][y].getOccupancy() != 0)) {
+                                        //System.out.println("Time to remove");
+                                        Card newCard = deck.deal();
+                                        Card oldCard = cardsList.get(k);
+                                        cardsList.remove(k);
+                                        cardsList.add(newCard);
+                                        return new DeadCardResponse(true, oldCard, newCard, cardsList);
+                                    }
                                 }
                             }
                         }
