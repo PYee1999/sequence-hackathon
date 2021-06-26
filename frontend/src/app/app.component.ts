@@ -87,6 +87,7 @@ export class AppComponent implements OnInit {
   }
 
   cardSelected(card: Card): void {
+    console.log('Card selected:', card);
     this.selectedCard = card;
     this.apiService.sendObject(Constants.SELECT_CARD_REQ_TYPE, {
       player: this.player,

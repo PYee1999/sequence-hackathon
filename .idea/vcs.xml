@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$USER_HOME$/java-getting-started" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/java-getting-started" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sequence-backend" vcs="Git" />
+    <mapping directory="$USER_HOME$/java-getting-started" vcs="Git" />
   </component>
 </project>
