@@ -7,6 +7,7 @@ To run the program:
 3. Enter the following commands:
 
 `set PORT=8080`
+
 `mvn spring-boot:run`
 
 Here is also the link to the game that is deployed on Heroku: http://sequence-hackathon.herokuapp.com/
