@@ -18,14 +18,14 @@ export class ApiService {
     if (environment.production) {
       if (window.location.host.includes('heroku')) {
         this.webSocket =
-          webSocket(`wss://${window.location.host}/api`);
+          new WebSocketSubject(`wss://${window.location.host}/api`);
       } else {
         this.webSocket =
-          webSocket(`ws://${window.location.host}/api`);
+          new WebSocketSubject(`ws://${window.location.host}/api`);
       }
     } else {
       this.webSocket =
-        webSocket('ws://localhost:8080/api');
+        new WebSocketSubject('ws://localhost:8080/api');
     }
     interval(2000)
       .pipe(map(() => this.webSocket.next({

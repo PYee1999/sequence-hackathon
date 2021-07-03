@@ -144,7 +144,8 @@ public class WebSocket extends TextWebSocketHandler {
             int winner = game.selectSpace(selectSpaceRequest.getCard(), selectSpaceRequest.getX(), selectSpaceRequest.getY());
             ResponseCarrier responseCarrier = new ResponseCarrier();
             responseCarrier.setType(Constants.SELECT_SPACE_RES_TYPE);
-            responseCarrier.setBody(new SelectSpaceResponse(winner, game.getCurrentPlayerNum(), game.getBoard(),
+            responseCarrier.setBody(new SelectSpaceResponse(winner, game.getCurrentPlayerNum(),
+                    game.getRed().getSequenceCounter(), game.getBlue().getSequenceCounter(), game.getBoard(),
                     game.getOtherPlayer().getCardsList()));
             sessions.forEach((ws, player) -> {
                 try {
