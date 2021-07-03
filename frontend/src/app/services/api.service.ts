@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {interval, Observable} from 'rxjs';
-import {WebSocketSubject} from 'rxjs/webSocket';
+import {WebSocketSubject, webSocket} from 'rxjs/webSocket';
 import {map} from "rxjs/operators";
 
 @Injectable({
@@ -18,14 +18,14 @@ export class ApiService {
     if (environment.production) {
       if (window.location.host.includes('heroku')) {
         this.webSocket =
-          new WebSocketSubject(`wss://${window.location.host}/api`);
+          webSocket(`wss://${window.location.host}/api`);
       } else {
         this.webSocket =
-          new WebSocketSubject(`ws://${window.location.host}/api`);
+          webSocket(`ws://${window.location.host}/api`);
       }
     } else {
       this.webSocket =
-        new WebSocketSubject('ws://localhost:8080/api');
+        webSocket('ws://localhost:8080/api');
     }
     interval(2000)
       .pipe(map(() => this.webSocket.next({

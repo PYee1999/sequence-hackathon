@@ -20,14 +20,14 @@ public class WebSocket extends TextWebSocketHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WebSocket.class);
 
-    private final Map<WebSocketSession, Player> sessions = new HashMap<>();
-
+    private Map<WebSocketSession, Player> sessions;
     private Game game;
     private int player;
 
     public WebSocket() {
         game = new Game();
         player = Constants.PLAYER_RED;
+        sessions = new HashMap<>();
     }
 
     @Override

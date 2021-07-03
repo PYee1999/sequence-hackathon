@@ -20,8 +20,6 @@ public class Game {
         board.initBoard();  // Initialize board
         deck.initDeck();    // Initialize deck
         deck.shuffle();     // Shuffle deck
-        red = new Player(board, deck, PLAYER_RED);      // Initialize red player
-        blue = new Player(board, deck, PLAYER_BLUE);    // Initialize blue player
 
         // Get 7 cards for red player from deck
         for (int i = 0; i < 7; i++) {
