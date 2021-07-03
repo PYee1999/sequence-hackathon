@@ -1,44 +1,44 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import {interval, Observable} from 'rxjs';
+import {WebSocketSubject} from 'rxjs/webSocket';
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private responses: Subject<any> = new Subject<any>();
-  private connected: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private webSocket: WebSocket;
+  private webSocket: WebSocketSubject<any>;
 
   get socket(): Observable<any> {
-    return this.responses.asObservable();
+    return this.webSocket.asObservable();
   }
 
   constructor() {
     if (environment.production) {
       if (window.location.host.includes('heroku')) {
         this.webSocket =
-          new WebSocket(`wss://${window.location.host}/api`);
+          new WebSocketSubject(`wss://${window.location.host}/api`);
       } else {
         this.webSocket =
-          new WebSocket(`ws://${window.location.host}/api`);
+          new WebSocketSubject(`ws://${window.location.host}/api`);
       }
     } else {
       this.webSocket =
-        new WebSocket('ws://localhost:8080/api');
+        new WebSocketSubject('ws://localhost:8080/api');
     }
-    this.webSocket.onopen = () => this.connected.next(true);
-    this.webSocket.onmessage = res => this.responses.next(JSON.parse(res.data));
+    interval(2000)
+      .pipe(map(() => this.webSocket.next({
+        type: 'ping',
+        body: ''
+      })))
+      .subscribe();
   }
 
   sendObject(type: string, body: any): void {
-    this.connected.subscribe(con => {
-      if (con) {
-        this.webSocket.send(JSON.stringify({
-          type,
-          body: JSON.stringify(body)
-        }));
-      }
-    })
+    this.webSocket.next({
+      type,
+      body: JSON.stringify(body)
+    });
   }
 }

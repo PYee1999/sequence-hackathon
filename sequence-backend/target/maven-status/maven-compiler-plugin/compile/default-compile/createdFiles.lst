@@ -6,6 +6,7 @@ com\sequence\res\SelectSpaceResponse.class
 com\sequence\WebSocket.class
 com\sequence\lib\Deck.class
 com\sequence\res\Response.class
+com\sequence\res\PingResponse.class
 com\sequence\res\StartGameResponse.class
 com\sequence\req\Request.class
 com\sequence\req\SelectSpaceRequest.class

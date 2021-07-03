@@ -52,6 +52,13 @@ public class WebSocket extends TextWebSocketHandler {
         super.handleTextMessage(session, message);
         ObjectMapper mapper = new ObjectMapper();
         RequestCarrier req = mapper.readValue(message.getPayload(), RequestCarrier.class);
+        if (req.getRequestType().equals(Constants.PING_REQ_TYPE)) {
+            ResponseCarrier responseCarrier = new ResponseCarrier();
+            responseCarrier.setType(Constants.PING_RES_TYPE);
+            responseCarrier.setBody(new PingResponse("pong"));
+            session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
+            return;
+        }
         if (req.getRequestType().equals(Constants.JOIN_REQ_TYPE)) {
             if (player == 0) {
                 ResponseCarrier responseCarrier = new ResponseCarrier();
