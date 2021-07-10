@@ -131,12 +131,12 @@ public class Player {
 
     // Checks for any dead cards
     public DeadCardResponse checkDeadCards() {
-
+        System.out.println("Beginning Dead Card check...");
         // Checks every single space on the board, as well as every card in the deck for a match
         for (int i = 0; i < board.getBoard().length; i++) {
             for (int j = 0; j < board.getBoard()[i].length; j++) {
                 for (int k = 0; k < cardsList.size(); k++) {
-                    //System.out.println("begining of index " + k + " at i,j: " + i + "," + j);
+                    System.out.println("beginning of index " + k + " at i,j: " + i + "," + j);
 
                     // If there's a occupied card space that matches a deck card, check for duplicates. Also, in the rare
                     // occurance where the added card is a dead card, it goes through this process again.
@@ -153,10 +153,19 @@ public class Player {
                                     if ((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
                                             && (board.getBoard()[x][y].getOccupancy() != 0)) {
                                         //System.out.println("Time to remove");
+                                        System.out.println("------- DEADCARD FOUND!!! -------");
+                                        System.out.println("cardsList.get(k).getCardSuitNum(): " + cardsList.get(k).getCardSuitNum());
+                                        System.out.println("board.getBoard()[x][y].getCardSuitNum(): " + board.getBoard()[x][y].getCardSuitNum());
+                                        System.out.println("(board.getBoard()[x][y].getOccupancy() != 0): " + (board.getBoard()[x][y].getOccupancy() != 0));
+
                                         Card newCard = deck.deal();
+                                        System.out.println("newCard: " + newCard.getCardSuitNum());
                                         Card oldCard = cardsList.get(k);
+                                        System.out.println("oldCard: " + oldCard.getCardSuitNum());
                                         cardsList.remove(k);
                                         cardsList.add(newCard);
+                                        System.out.println("Updated cardsList: " + cardsList);
+                                        System.out.println("End of Dead Card Check: Dead Card " + oldCard + " has been replaced");
                                         return new DeadCardResponse(true, oldCard, newCard, cardsList);
                                     }
                                 }
@@ -166,6 +175,7 @@ public class Player {
                 }
             }
         }
+        System.out.println("End of Dead Card Check: No Dead Cards found");
         return new DeadCardResponse(false);
     }
 

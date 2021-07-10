@@ -2,8 +2,8 @@ package com.sequence.lib;
 
 public class Space {
 
-    private int xLocation;      // Horizontal Axis (Range: 0-9)
-    private int yLocation;      // Vertical Axis (Range: 0-9)
+    private int xLocation;      // Horizontal Axis (Range: 0-9, Going from right to left)
+    private int yLocation;      // Vertical Axis (Range: 0-9, Going from bottom to top)
     private int cardSuitNum;    // Suit & Number for card
     private int occupancy;      // Is space occupied by player {-1, 0, 1}
 

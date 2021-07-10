@@ -58,19 +58,22 @@ public class WebSocket extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         super.handleTextMessage(session, message);
         ObjectMapper mapper = new ObjectMapper();
-        System.out.println("ObjectMapper mapper created");
+        //System.out.println("ObjectMapper mapper created");
         RequestCarrier req = mapper.readValue(message.getPayload(), RequestCarrier.class);
-        System.out.println("RequestCarrier req created and read from mapper");
+        //System.out.println("RequestCarrier req created and read from mapper");
+        //System.out.println("message.getPayload(): " + message.getPayload());
+
+        //System.out.println("req.getRequestType(): " + req.getRequestType());
         if (req.getRequestType().equals(Constants.PING_REQ_TYPE)) {
-            System.out.println("req = PING");
+            //System.out.println("req = PING");
             ResponseCarrier responseCarrier = new ResponseCarrier();
-            System.out.println("ResponseCarrier responseCarrier created");
+            //System.out.println("ResponseCarrier responseCarrier created");
             responseCarrier.setType(Constants.PING_RES_TYPE);
-            System.out.println("responseCarrier type set to PING");
+            //System.out.println("responseCarrier type set to PING");
             responseCarrier.setBody(new PingResponse("pong"));
-            System.out.println("responseCarrier body set to pong");
+            //System.out.println("responseCarrier body set to pong");
             session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
-            System.out.println("TextMessage sent");
+            //System.out.println("TextMessage sent");
             return;
         }
         if (req.getRequestType().equals(Constants.JOIN_REQ_TYPE)) {
@@ -208,7 +211,7 @@ public class WebSocket extends TextWebSocketHandler {
             game.getCurrentPlayer().addCard(game.getDeck().deal());
             System.out.println("Deal card in player's deck");
             int winner = game.selectSpace(selectSpaceRequest.getCard(), selectSpaceRequest.getX(), selectSpaceRequest.getY());
-            System.out.println("Identify a winner (if there is one)");
+            System.out.println("Identify a winner: winner = " + winner);
             ResponseCarrier responseCarrier = new ResponseCarrier();
             System.out.println("ResponseCarrier responseCarreier created");
             responseCarrier.setType(Constants.SELECT_SPACE_RES_TYPE);
@@ -219,7 +222,8 @@ public class WebSocket extends TextWebSocketHandler {
             sessions.forEach((ws, player) -> {
                 try {
                     ws.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
-                    System.out.println("Send message about the winner");
+                    System.out.println("Send message to " + player + " about the winner");
+                    // ???
                 } catch (Exception e) {
                     e.printStackTrace();
                     System.out.println("ERROR with sending message about the winner");
@@ -229,7 +233,12 @@ public class WebSocket extends TextWebSocketHandler {
 
         if (req.getRequestType().equals(Constants.DEAD_CARD_REQ_TYPE)) {
             System.out.println("req is DEAD_CARD_REQ_TYPE");
+            System.out.println("Beginning DEAD_CARD_REQ");
             DeadCardRequest deadCardRequest = mapper.readValue(req.getBody(), DeadCardRequest.class);
+            System.out.println("deadCardRequest created and reading from req.getBody()");
+            System.out.println("deadCardRequest: " + deadCardRequest);
+            System.out.println("req.getBody(): " + req.getBody());
+
             if (deadCardRequest.getPlayer() != game.getCurrentPlayerNum()) {
                 System.out.println("deadCardRequest.getPlayer(): " + deadCardRequest.getPlayer());
                 System.out.println("game.getCurrentPlayerNum(): " + game.getCurrentPlayerNum());
@@ -240,8 +249,9 @@ public class WebSocket extends TextWebSocketHandler {
                 session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
                 System.out.println("ERROR: Not player's turn");
             }
-            DeadCardResponse deadCardResponse = game.getCurrentPlayer().checkDeadCards();
-            System.out.println("DeadCardResponse deadCardResponse set to find dead cards in player " + game.getCurrentPlayer().getPlayerMarker() + " deck");
+            //DeadCardResponse deadCardResponse = game.getCurrentPlayer().checkDeadCards();
+            DeadCardResponse deadCardResponse = new DeadCardResponse(false);
+            //System.out.println("DeadCardResponse deadCardResponse set to find dead cards in player " + game.getCurrentPlayer().getPlayerMarker() + " deck");
             ResponseCarrier responseCarrier = new ResponseCarrier();
             System.out.println("ResponseCarrier responseCarrier created");
             responseCarrier.setType(Constants.DEAD_CARD_RES_TYPE);
@@ -250,6 +260,7 @@ public class WebSocket extends TextWebSocketHandler {
             System.out.println("responseCarrier set body to deadCardResponse");
             session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
             System.out.println("responseCarrier message sent");
+            System.out.println("Leaving DEAD CARD If-statement");
         }
     }
 
