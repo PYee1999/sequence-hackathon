@@ -131,51 +131,77 @@ public class Player {
 
     // Checks for any dead cards
     public DeadCardResponse checkDeadCards() {
-        System.out.println("Beginning Dead Card check...");
-        // Checks every single space on the board, as well as every card in the deck for a match
-        for (int i = 0; i < board.getBoard().length; i++) {
-            for (int j = 0; j < board.getBoard()[i].length; j++) {
-                for (int k = 0; k < cardsList.size(); k++) {
-                    System.out.println("beginning of index " + k + " at i,j: " + i + "," + j);
 
-                    // If there's a occupied card space that matches a deck card, check for duplicates. Also, in the rare
-                    // occurance where the added card is a dead card, it goes through this process again.
-                    while ((cardsList.get(k).getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum())
-                            && (board.getBoard()[i][j].getOccupancy() != 0)) {
+        for (int i = 0; i < cardsList.size(); i++) {
+            Card card = cardsList.get(i);
+            int[] coord1 = new int[] {card.getCoordinates()[0][0], card.getCoordinates()[0][1]};
+            int[] coord2 = new int[] {card.getCoordinates()[1][0], card.getCoordinates()[1][1]};
 
-                        // If there's a occupied space with the exact card name, verify that the next space isn't occupied
-                        for (int x = i; x < board.getBoard().length; x++) {
-                            for (int y = j; y < board.getBoard()[i].length; y++) {
+            System.out.println("coord1: (" + coord1[0] + ", " + coord1[1] + ")");
+            System.out.println("coord2: (" + coord2[0] + ", " + coord2[1] + ")");
 
-                                // If the other space is occupied, delete dead card from deck and get a new card.
-                                // First, skip the first element, since it has already been checked
-                                if (!((x == i) && (y == j))){
-                                    if ((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
-                                            && (board.getBoard()[x][y].getOccupancy() != 0)) {
-                                        //System.out.println("Time to remove");
-                                        System.out.println("------- DEADCARD FOUND!!! -------");
-                                        System.out.println("cardsList.get(k).getCardSuitNum(): " + cardsList.get(k).getCardSuitNum());
-                                        System.out.println("board.getBoard()[x][y].getCardSuitNum(): " + board.getBoard()[x][y].getCardSuitNum());
-                                        System.out.println("(board.getBoard()[x][y].getOccupancy() != 0): " + (board.getBoard()[x][y].getOccupancy() != 0));
+            if (board.getBoard()[coord1[0]][coord1[1]].getOccupancy() != 0 &&
+                board.getBoard()[coord2[0]][coord2[1]].getOccupancy() != 0) {
+                System.out.println("------- DEADCARD FOUND!!! -------");
 
-                                        Card newCard = deck.deal();
-                                        System.out.println("newCard: " + newCard.getCardSuitNum());
-                                        Card oldCard = cardsList.get(k);
-                                        System.out.println("oldCard: " + oldCard.getCardSuitNum());
-                                        cardsList.remove(k);
-                                        cardsList.add(newCard);
-                                        System.out.println("Updated cardsList: " + cardsList);
-                                        System.out.println("End of Dead Card Check: Dead Card " + oldCard + " has been replaced");
-                                        return new DeadCardResponse(true, oldCard, newCard, cardsList);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                Card newCard = deck.deal();
+                System.out.println("newCard: " + newCard.getCardSuitNum());
+                Card oldCard = cardsList.get(i);
+                System.out.println("oldCard: " + oldCard.getCardSuitNum());
+                cardsList.remove(i);
+                cardsList.add(newCard);
+                System.out.println("Updated cardsList: " + cardsList);
+                System.out.println("End of Dead Card Check: Dead Card " + oldCard + " has been replaced");
+                return new DeadCardResponse(true, oldCard, newCard, cardsList);
             }
+
         }
-        System.out.println("End of Dead Card Check: No Dead Cards found");
+
+//        System.out.println("Beginning Dead Card check...");
+//        // Checks every single space on the board, as well as every card in the deck for a match
+//        for (int i = 0; i < board.getBoard().length; i++) {
+//            for (int j = 0; j < board.getBoard()[i].length; j++) {
+//                for (int k = 0; k < cardsList.size(); k++) {
+//                    System.out.println("beginning of index " + k + " at i,j: " + i + "," + j);
+//
+//                    // If there's a occupied card space that matches a deck card, check for duplicates. Also, in the rare
+//                    // occurance where the added card is a dead card, it goes through this process again.
+//                    while ((cardsList.get(k).getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum())
+//                            && (board.getBoard()[i][j].getOccupancy() != 0)) {
+//
+//                        // If there's a occupied space with the exact card name, verify that the next space isn't occupied
+//                        for (int x = i; x < board.getBoard().length; x++) {
+//                            for (int y = j; y < board.getBoard()[i].length; y++) {
+//
+//                                // If the other space is occupied, delete dead card from deck and get a new card.
+//                                // First, skip the first element, since it has already been checked
+//                                if (!((x == i) && (y == j))){
+//                                    if ((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
+//                                            && (board.getBoard()[x][y].getOccupancy() != 0)) {
+//                                        //System.out.println("Time to remove");
+//                                        System.out.println("------- DEADCARD FOUND!!! -------");
+//                                        System.out.println("cardsList.get(k).getCardSuitNum(): " + cardsList.get(k).getCardSuitNum());
+//                                        System.out.println("board.getBoard()[x][y].getCardSuitNum(): " + board.getBoard()[x][y].getCardSuitNum());
+//                                        System.out.println("(board.getBoard()[x][y].getOccupancy() != 0): " + (board.getBoard()[x][y].getOccupancy() != 0));
+//
+//                                        Card newCard = deck.deal();
+//                                        System.out.println("newCard: " + newCard.getCardSuitNum());
+//                                        Card oldCard = cardsList.get(k);
+//                                        System.out.println("oldCard: " + oldCard.getCardSuitNum());
+//                                        cardsList.remove(k);
+//                                        cardsList.add(newCard);
+//                                        System.out.println("Updated cardsList: " + cardsList);
+//                                        System.out.println("End of Dead Card Check: Dead Card " + oldCard + " has been replaced");
+//                                        return new DeadCardResponse(true, oldCard, newCard, cardsList);
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        System.out.println("End of Dead Card Check: No Dead Cards found");
         return new DeadCardResponse(false);
     }
 

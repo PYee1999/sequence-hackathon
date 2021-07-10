@@ -175,7 +175,8 @@ public class WebSocket extends TextWebSocketHandler {
                                 player.listAvailableSpaces(
                                         new Card(
                                                 selectCardRequest.getCardID(),
-                                                selectCardRequest.getCardSuitNum()
+                                                selectCardRequest.getCardSuitNum(),
+                                                selectCardRequest.getCoordinates() // TODO: NEED TO ADD getCoordinates()
                                         ), otherPlayer
                                 )
                         )
@@ -249,8 +250,8 @@ public class WebSocket extends TextWebSocketHandler {
                 session.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
                 System.out.println("ERROR: Not player's turn");
             }
-            //DeadCardResponse deadCardResponse = game.getCurrentPlayer().checkDeadCards();
-            DeadCardResponse deadCardResponse = new DeadCardResponse(false);
+            DeadCardResponse deadCardResponse = game.getCurrentPlayer().checkDeadCards();
+            //DeadCardResponse deadCardResponse = new DeadCardResponse(false);
             //System.out.println("DeadCardResponse deadCardResponse set to find dead cards in player " + game.getCurrentPlayer().getPlayerMarker() + " deck");
             ResponseCarrier responseCarrier = new ResponseCarrier();
             System.out.println("ResponseCarrier responseCarrier created");

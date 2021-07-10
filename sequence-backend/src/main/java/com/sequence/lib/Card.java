@@ -3,13 +3,14 @@ package com.sequence.lib;
 import java.util.Objects;
 
 public class Card {
-
     private int cardID;      // Unique Id for Card
     private int cardSuitNum; // Suit & Number for card
+    private int coordinates[][];
 
-    public Card(int cardID, int cardSuitNum) {
+    public Card(int cardID, int cardSuitNum, int coordinates[][]) {
         this.cardID = cardID;
         this.cardSuitNum = cardSuitNum;
+        this.coordinates = coordinates;
     }
 
     public int getCardID() {
@@ -26,6 +27,14 @@ public class Card {
 
     public void setCardSuitNum(int cardSuitNum) {
         this.cardSuitNum = cardSuitNum;
+    }
+
+    public int[][] getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(int[][] coordinates) {
+        this.coordinates = coordinates;
     }
 
     @Override

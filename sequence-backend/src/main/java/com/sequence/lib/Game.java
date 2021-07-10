@@ -18,7 +18,7 @@ public class Game {
 
     public void startGame() {
         board.initBoard();  // Initialize board
-        deck.initDeck();    // Initialize deck
+        deck.initDeck(board);    // Initialize deck
         deck.shuffle();     // Shuffle deck
 
         // Get 7 cards for red player from deck

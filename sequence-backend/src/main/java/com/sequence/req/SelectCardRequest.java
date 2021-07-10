@@ -6,6 +6,7 @@ public class SelectCardRequest implements Request {
     private int player;
     private int cardID;
     private int cardSuitNum;
+    private int coordinates[][];
 
     public int getCardID() {
         return cardID;
@@ -17,5 +18,9 @@ public class SelectCardRequest implements Request {
 
     public int getPlayer() {
         return player;
+    }
+
+    public int[][] getCoordinates() {
+        return coordinates;
     }
 }
