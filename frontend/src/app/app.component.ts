@@ -28,6 +28,8 @@ export class AppComponent implements OnInit {
 
   player = 0;
   winner = 0;
+  sequences = 0;
+  enemySequences = 0;
   cards: Card[];
   spaces: Space[] = [];
   board: Board;
@@ -54,6 +56,13 @@ export class AppComponent implements OnInit {
         case Constants.SELECT_SPACE_RES_TYPE:
           this.board = res.body.board;
           this.spaces = [];
+          if (this.player === 1) {
+            this.sequences = res.body.redSequences;
+            this.enemySequences = res.body.blueSequences;
+          } else {
+            this.sequences = res.body.blueSequences;
+            this.enemySequences = res.body.redSequences;
+          }
           if (res.body.winner !== 0) {
             this.winner = res.body.winner;
           }

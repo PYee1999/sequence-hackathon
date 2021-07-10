@@ -20,8 +20,6 @@ public class Game {
         board.initBoard();  // Initialize board
         deck.initDeck();    // Initialize deck
         deck.shuffle();     // Shuffle deck
-        red = new Player(board, deck, PLAYER_RED);      // Initialize red player
-        blue = new Player(board, deck, PLAYER_BLUE);    // Initialize blue player
 
         // Get 7 cards for red player from deck
         for (int i = 0; i < 7; i++) {
@@ -45,8 +43,8 @@ public class Game {
         Space chosenSpace = currentPlayer.selectSpace(cardSuitNum, x, y); // Get space chosen by player
 
         // Check if there is a win on the board, after player makes move on board
-        int win = board.checkSequence(chosenSpace.getxLocation(), chosenSpace.getyLocation(), currentPlayer);
-        if (win == 2) {
+        int seqCount = board.checkSequence(chosenSpace.getxLocation(), chosenSpace.getyLocation(), currentPlayer);
+        if (seqCount == 2) {
             // If a player wins, return the player's marker integer (1 or -1 for red or blue)
             return currentPlayer.getPlayerMarker();
         }
@@ -94,5 +92,14 @@ public class Game {
         return redsTurn ? blue : red;
     }
 
-    public void nextTurn() {redsTurn = !redsTurn;}
+    public void nextTurn() {
+        redsTurn = !redsTurn;
+        String playerColor = "";
+        if (redsTurn == true) {
+            playerColor = "RED";
+        } else {
+            playerColor = "BLUE";
+        }
+        System.out.println("It is now " + playerColor + " turn");
+    }
 }

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {interval, Observable} from 'rxjs';
-import {WebSocketSubject} from 'rxjs/webSocket';
+import {WebSocketSubject, webSocket} from 'rxjs/webSocket';
 import {map} from "rxjs/operators";
 
 @Injectable({
