@@ -16,6 +16,7 @@ public class Game {
         deck = new Deck();
     }
 
+    // Initialize the game
     public void startGame() {
         board.initBoard();  // Initialize board
         deck.initDeck(board);    // Initialize deck
@@ -32,12 +33,14 @@ public class Game {
         }
     }
 
+    // For a given player, select a card that player wants to use
     public void selectCard(Card card) {
         Player currentPlayer = redsTurn ? red : blue;   // Get player
         currentPlayer.selectCard(card);     // Select card and remove from player's hand
         currentPlayer.addCard(deck.deal()); // Add new card to player's hand from deck
     }
 
+    // Selects space on the board that the player wants to occupy
     public int selectSpace(int cardSuitNum, int x, int y) {
         Player currentPlayer = redsTurn ? red : blue;   // Get player
         Space chosenSpace = currentPlayer.selectSpace(cardSuitNum, x, y); // Get space chosen by player

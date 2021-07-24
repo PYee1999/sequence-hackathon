@@ -37,6 +37,7 @@ public class Card {
         this.coordinates = coordinates;
     }
 
+    // Compares cards to see if they are the same
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

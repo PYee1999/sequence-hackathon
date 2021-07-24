@@ -79,6 +79,7 @@ public class Player {
         return board.getSpaceOnBoard(x, y);
     }
 
+    // Checks if a given space is occupied by a sequence.
     public boolean spaceInSequence(Space space) {
         if (sequenceList == null) {
             return false;
@@ -91,6 +92,7 @@ public class Player {
         return false;
     }
 
+    // Get list of available spaces on board for given card chosen by a given player
     public List<Space> listAvailableSpaces(Card card, Player otherPlayer) {
 
         List<Space> temp = new ArrayList<Space>();
@@ -133,13 +135,18 @@ public class Player {
     public DeadCardResponse checkDeadCards() {
 
         for (int i = 0; i < cardsList.size(); i++) {
+
+            // Get card
             Card card = cardsList.get(i);
+
+            // Get coordinate locations of the card on the map (there are two locations)
             int[] coord1 = new int[] {card.getCoordinates()[0][0], card.getCoordinates()[0][1]};
             int[] coord2 = new int[] {card.getCoordinates()[1][0], card.getCoordinates()[1][1]};
 
             System.out.println("coord1: (" + coord1[0] + ", " + coord1[1] + ")");
             System.out.println("coord2: (" + coord2[0] + ", " + coord2[1] + ")");
 
+            // Check if the locations are occupied; if so, then we replace the card; if not, resume
             if (board.getBoard()[coord1[0]][coord1[1]].getOccupancy() != 0 &&
                 board.getBoard()[coord2[0]][coord2[1]].getOccupancy() != 0) {
                 System.out.println("------- DEADCARD FOUND!!! -------");
@@ -156,60 +163,16 @@ public class Player {
             }
 
         }
-
-//        System.out.println("Beginning Dead Card check...");
-//        // Checks every single space on the board, as well as every card in the deck for a match
-//        for (int i = 0; i < board.getBoard().length; i++) {
-//            for (int j = 0; j < board.getBoard()[i].length; j++) {
-//                for (int k = 0; k < cardsList.size(); k++) {
-//                    System.out.println("beginning of index " + k + " at i,j: " + i + "," + j);
-//
-//                    // If there's a occupied card space that matches a deck card, check for duplicates. Also, in the rare
-//                    // occurance where the added card is a dead card, it goes through this process again.
-//                    while ((cardsList.get(k).getCardSuitNum() == board.getBoard()[i][j].getCardSuitNum())
-//                            && (board.getBoard()[i][j].getOccupancy() != 0)) {
-//
-//                        // If there's a occupied space with the exact card name, verify that the next space isn't occupied
-//                        for (int x = i; x < board.getBoard().length; x++) {
-//                            for (int y = j; y < board.getBoard()[i].length; y++) {
-//
-//                                // If the other space is occupied, delete dead card from deck and get a new card.
-//                                // First, skip the first element, since it has already been checked
-//                                if (!((x == i) && (y == j))){
-//                                    if ((cardsList.get(k).getCardSuitNum() == board.getBoard()[x][y].getCardSuitNum())
-//                                            && (board.getBoard()[x][y].getOccupancy() != 0)) {
-//                                        //System.out.println("Time to remove");
-//                                        System.out.println("------- DEADCARD FOUND!!! -------");
-//                                        System.out.println("cardsList.get(k).getCardSuitNum(): " + cardsList.get(k).getCardSuitNum());
-//                                        System.out.println("board.getBoard()[x][y].getCardSuitNum(): " + board.getBoard()[x][y].getCardSuitNum());
-//                                        System.out.println("(board.getBoard()[x][y].getOccupancy() != 0): " + (board.getBoard()[x][y].getOccupancy() != 0));
-//
-//                                        Card newCard = deck.deal();
-//                                        System.out.println("newCard: " + newCard.getCardSuitNum());
-//                                        Card oldCard = cardsList.get(k);
-//                                        System.out.println("oldCard: " + oldCard.getCardSuitNum());
-//                                        cardsList.remove(k);
-//                                        cardsList.add(newCard);
-//                                        System.out.println("Updated cardsList: " + cardsList);
-//                                        System.out.println("End of Dead Card Check: Dead Card " + oldCard + " has been replaced");
-//                                        return new DeadCardResponse(true, oldCard, newCard, cardsList);
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        System.out.println("End of Dead Card Check: No Dead Cards found");
         return new DeadCardResponse(false);
     }
 
+    // Remove a specific card from the player's hand
     public boolean removeCard(int cardSuitNum) {
         return cardsList.remove(
                 cardsList.stream().filter(c -> c.getCardSuitNum() == cardSuitNum).collect(Collectors.toList()).get(0));
     }
 
+    // Print the first sequence list that player may have gotten from the game
     public void printSeqList() {
         System.out.print("SEQUENCE LIST: { ");
         if (sequenceList != null) {
