@@ -24,29 +24,29 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="5" />
-          <entry key="java" value="22" />
-          <entry key="ts" value="10" />
+          <entry key="java" value="26" />
+          <entry key="ts" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="5" />
-          <entry key="JAVA" value="22" />
+          <entry key="JAVA" value="26" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="TypoScript File" value="7" />
+          <entry key="TypoScript File" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="2" />
-          <entry key="java" value="5162" />
+          <entry key="java" value="5647" />
           <entry key="ts" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2" />
-          <entry key="JAVA" value="5162" />
+          <entry key="JAVA" value="5647" />
           <entry key="PLAIN_TEXT" value="29" />
         </counts>
       </usages-collector>
@@ -57,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
+            <state relative-caret-position="240">
               <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -86,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="251" column="78" selection-start-line="251" selection-start-column="78" selection-end-line="251" selection-end-column="78" />
+            <state relative-caret-position="207">
+              <caret line="161" column="28" lean-forward="true" selection-start-line="161" selection-start-column="28" selection-end-line="161" selection-end-column="28" />
               <folding>
                 <element signature="method#initBoard#0;class#Board#0" />
               </folding>
@@ -98,15 +98,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+            <state relative-caret-position="398">
+              <caret line="98" selection-start-line="98" selection-end-line="98" />
               <folding>
                 <element signature="method#Player#0;class#Player#0" />
                 <element signature="method#selectCard#0;class#Player#0" />
                 <element signature="method#selectCard#1;class#Player#0" />
                 <element signature="method#selectSpace#0;class#Player#0" />
                 <element signature="method#listAvailableSpaces#0;class#Player#0" />
-                <element signature="method#checkDeadCards#0;class#Player#0" />
                 <element signature="method#removeCard#0;class#Player#0" />
               </folding>
             </state>
@@ -116,11 +115,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Deck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
+            <state relative-caret-position="183">
               <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
               <folding>
                 <element signature="method#deal#0;class#Deck#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2335">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -184,11 +192,11 @@
         <option value="$PROJECT_DIR$/frontend/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Space.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/req/SelectCardRequest.java" />
-        <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Deck.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Card.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Game.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java" />
+        <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java" />
         <option value="$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java" />
       </list>
     </option>
@@ -245,15 +253,6 @@
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="card" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -327,6 +326,17 @@
               <item name="sequence" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="sequence-backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="sequence" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="req" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -352,6 +362,163 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Anand\sequence-hackathon\sequence-backend" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/frontend/src/app/app.component.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/frontend/src/app/components/board/board.component.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/frontend/src/app/services/util.service.ts</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/res/SelectSpaceResponse.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/Constants.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/Main.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/WebSocket.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/WebSocketConfig.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Board.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Card.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Deck.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Game.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Player.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Space.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/req/DeadCardRequest.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/req/JoinRequest.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/req/Request.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/req/RequestCarrier.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/req/SelectCardRequest.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/req/SelectSpaceRequest.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/res/DeadCardResponse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/res/ErrorResponse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/res/JoinResponse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/res/PingResponse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/res/Response.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/res/ResponseCarrier.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/res/SelectCardResponse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/res/SelectSpaceResponse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/res/StartGameResponse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/public/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/main.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/polyfills.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/runtime.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/styles.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/vendor.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/public/main.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/public/polyfills.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/public/runtime.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/public/styles.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/target/classes/public/vendor.js</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/3rdpartylicenses.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/main.24e386f17f211b2751b0.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/polyfills.bf15173c2e3225c09acd.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/runtime.e4ad626db3c83504cec0.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sequence-backend/src/main/resources/public/styles.09e2c710755c8867a460.css</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -548,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4712">
-          <caret line="262" column="12" selection-start-line="262" selection-start-column="12" selection-end-line="262" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -567,13 +727,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/services/util.service.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/api.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/models/space.ts">
       <provider selected="true" editor-type-id="text-editor" />
@@ -601,16 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Deck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-          <folding>
-            <element signature="method#deal#0;class#Deck#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -625,19 +768,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Space.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="method#Space#0;class#Space#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="240">
           <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -650,17 +783,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/req/DeadCardRequest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/req/Request.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/req/JoinRequest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Space.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="method#Space#0;class#Space#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/api.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2335">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+          <folding>
+            <element signature="method#deal#0;class#Deck#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+        <state relative-caret-position="398">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
           <folding>
             <element signature="method#Player#0;class#Player#0" />
             <element signature="method#selectCard#0;class#Player#0" />
             <element signature="method#selectCard#1;class#Player#0" />
             <element signature="method#selectSpace#0;class#Player#0" />
             <element signature="method#listAvailableSpaces#0;class#Player#0" />
-            <element signature="method#checkDeadCards#0;class#Player#0" />
             <element signature="method#removeCard#0;class#Player#0" />
           </folding>
         </state>
@@ -668,8 +843,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="251" column="78" selection-start-line="251" selection-start-column="78" selection-end-line="251" selection-end-column="78" />
+        <state relative-caret-position="207">
+          <caret line="161" column="28" lean-forward="true" selection-start-line="161" selection-start-column="28" selection-end-line="161" selection-end-column="28" />
           <folding>
             <element signature="method#initBoard#0;class#Board#0" />
           </folding>
