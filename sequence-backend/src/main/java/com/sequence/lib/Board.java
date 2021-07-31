@@ -225,10 +225,11 @@ public class Board {
                 };
                 if (intersections <= 1) {   // If there is at most one sequence,
                     player.setSequenceCounter(2);   // Set sequence count to 2
+                    player.setSequenceList2(newSequenceList); // Save second sequence
                 }
             } else { // Otherwise, if you have 0 sequences previously,
                 player.setSequenceCounter(1); // Set sequence counter to 1
-                player.setSequenceList(newSequenceList); // Save sequence
+                player.setSequenceList(newSequenceList); // Save first sequence
             }
         }
 
@@ -239,10 +240,34 @@ public class Board {
             System.out.print("Red,  ");
         }
 
-        System.out.print("MARKER AT: (" + x + ", " + y + "), ");
+        System.out.println("MARKER AT: (" + x + ", " + y + ")");
 
-        System.out.print("TOTAL SEQUENCES: " + player.getSequenceCounter() + ", ");
-        player.printSeqList();
+        System.out.print("PLAYER: ");
+        if (player.getPlayerMarker() == -1) {
+            System.out.print("Blue, ");
+        } else {
+            System.out.print("Red,  ");
+        }
+
+        System.out.println("TOTAL SEQUENCES: " + player.getSequenceCounter());
+
+        System.out.print("PLAYER: ");
+        if (player.getPlayerMarker() == -1) {
+            System.out.print("Blue, ");
+        } else {
+            System.out.print("Red,  ");
+        }
+
+        player.printSeqList(1);
+
+        System.out.print("PLAYER: ");
+        if (player.getPlayerMarker() == -1) {
+            System.out.print("Blue, ");
+        } else {
+            System.out.print("Red,  ");
+        }
+
+        player.printSeqList(2);
 
         return player.getSequenceCounter();
     }

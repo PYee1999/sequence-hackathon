@@ -10,6 +10,7 @@ public class Player {
     private int playerMarker;
     private int sequenceCounter;
     private List<Space> sequenceList;
+    private List<Space> sequenceList2;
     private List<Card> cardsList;
     private Board board;
     private Deck deck;
@@ -49,6 +50,10 @@ public class Player {
 
     public void setSequenceList(List<Space> val) {
         sequenceList = new ArrayList<>(val);
+    }
+
+    public void setSequenceList2(List<Space> val) {
+        sequenceList2 = new ArrayList<>(val);
     }
 
     public Card selectCard(Card card) {
@@ -173,14 +178,22 @@ public class Player {
     }
 
     // Print the first sequence list that player may have gotten from the game
-    public void printSeqList() {
-        System.out.print("SEQUENCE LIST: { ");
-        if (sequenceList != null) {
-            for (int i = 0; i < sequenceList.size(); i++) {
-                System.out.print("(" + sequenceList.get(i).getxLocation() + ", " + sequenceList.get(i).getyLocation() + ") ");
+    public void printSeqList(int number) {
+        System.out.print("SEQUENCE LIST " + number + ": { ");
+
+        if (number == 1) {
+            if (sequenceList != null) {
+                for (int i = 0; i < sequenceList.size(); i++) {
+                    System.out.print("(" + sequenceList.get(i).getxLocation() + ", " + sequenceList.get(i).getyLocation() + ") ");
+                }
+            }
+        } else {
+            if (sequenceList2 != null) {
+                for (int i = 0; i < sequenceList2.size(); i++) {
+                    System.out.print("(" + sequenceList2.get(i).getxLocation() + ", " + sequenceList2.get(i).getyLocation() + ") ");
+                }
             }
         }
         System.out.println("}");
     }
-
 }
