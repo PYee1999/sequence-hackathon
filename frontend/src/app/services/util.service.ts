@@ -6,6 +6,7 @@ import {Constants} from '../constants';
 })
 export class UtilService {
   public player: number;
+  public winner: number;
 
   constructor() {
   }

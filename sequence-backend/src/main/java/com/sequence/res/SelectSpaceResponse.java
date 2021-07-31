@@ -18,6 +18,8 @@ public class SelectSpaceResponse implements Response {
         this.currentPlayer = currentPlayer;
         this.board = board;
         this.hand = hand;
+        this.redSequences = redSequences;
+        this.blueSequences = blueSequences;
     }
 
     public int getWinner() {

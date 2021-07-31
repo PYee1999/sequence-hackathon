@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
             this.enemySequences = res.body.redSequences;
           }
           if (res.body.winner !== 0) {
-            this.winner = res.body.winner;
+            this.winner = this.utilService.winner = res.body.winner;
           }
           if (res.body.currentPlayer !== this.player) {
             this.cards = res.body.hand;
@@ -96,12 +96,14 @@ export class AppComponent implements OnInit {
   }
 
   cardSelected(card: Card): void {
-    console.log('Card selected:', card);
-    this.selectedCard = card;
-    this.apiService.sendObject(Constants.SELECT_CARD_REQ_TYPE, {
-      player: this.player,
-      ...card
-    });
+    if (!this.winner) {
+      console.log('Card selected:', card);
+      this.selectedCard = card;
+      this.apiService.sendObject(Constants.SELECT_CARD_REQ_TYPE, {
+        player: this.player,
+        ...card
+      });
+    }
   }
 
   checkDeadCards(): void {

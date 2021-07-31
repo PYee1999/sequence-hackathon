@@ -23,14 +23,16 @@ export class BoardComponent implements OnInit {
   }
 
   selectSpace(x: number, y: number, cardSuitNum: number): void {
-    const found = this.spaces.find(val => val.xLocation === x && val.yLocation === y);
-    if (found) {
-      this.apiService.sendObject(Constants.SELECT_SPACE_REQ_TYPE, {
-        x,
-        y,
-        card: cardSuitNum,
-        player: this.utilService.player
-      });
+    if (!this.utilService.winner) {
+      const found = this.spaces.find(val => val.xLocation === x && val.yLocation === y);
+      if (found) {
+        this.apiService.sendObject(Constants.SELECT_SPACE_REQ_TYPE, {
+          x,
+          y,
+          card: cardSuitNum,
+          player: this.utilService.player
+        });
+      }
     }
   }
 

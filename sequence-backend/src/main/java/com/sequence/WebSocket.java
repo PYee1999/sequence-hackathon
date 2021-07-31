@@ -214,7 +214,7 @@ public class WebSocket extends TextWebSocketHandler {
             int winner = game.selectSpace(selectSpaceRequest.getCard(), selectSpaceRequest.getX(), selectSpaceRequest.getY());
             System.out.println("Identify a winner: winner = " + winner);
             ResponseCarrier responseCarrier = new ResponseCarrier();
-            System.out.println("ResponseCarrier responseCarreier created");
+            System.out.println("ResponseCarrier responseCarrier created");
             responseCarrier.setType(Constants.SELECT_SPACE_RES_TYPE);
             System.out.println("responseCarrier set type to SELECT_SPACE_RES_TYPE");
             responseCarrier.setBody(new SelectSpaceResponse(winner, game.getCurrentPlayerNum(),
@@ -224,7 +224,7 @@ public class WebSocket extends TextWebSocketHandler {
                 try {
                     ws.sendMessage(new TextMessage(mapper.writeValueAsString(responseCarrier)));
                     System.out.println("Send message to " + player + " about the winner");
-                    // ???
+                    // Send response to the players
                 } catch (Exception e) {
                     e.printStackTrace();
                     System.out.println("ERROR with sending message about the winner");
