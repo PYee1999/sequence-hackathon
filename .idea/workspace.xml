@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c6d0c6d1-e276-402e-8e35-a079860d6cb5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Deck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/sequence-backend/target/classes/com/sequence/lib/Player.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,15 +27,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="2" />
-          <entry key="java" value="14" />
+          <entry key="html" value="3" />
+          <entry key="java" value="16" />
           <entry key="ts" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="2" />
-          <entry key="JAVA" value="14" />
+          <entry key="HTML" value="3" />
+          <entry key="JAVA" value="16" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
@@ -54,6 +58,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4472">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4712">
@@ -63,10 +76,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Space.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="method#Space#0;class#Space#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Game.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Game#0;class#Game#0" />
@@ -173,7 +207,95 @@
             <path>
               <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="frontend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="services" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="sequence-backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="sequence-backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="sequence-backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="sequence-backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="sequence-backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="sequence-backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="sequence" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sequence-hackathon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="sequence-hackathon" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="sequence-backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="sequence" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -389,13 +511,6 @@
         <state relative-caret-position="-165" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/services/api.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -427,23 +542,6 @@
           <folding>
             <element signature="method#deal#0;class#Deck#0" />
             <element signature="method#calcCardSuitNum#0;class#Deck#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2946">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Space.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="method#Space#0;class#Space#0" />
           </folding>
         </state>
       </provider>
@@ -480,17 +578,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4712">
-          <caret line="262" column="12" selection-start-line="262" selection-start-column="12" selection-end-line="262" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Game#0;class#Game#0" />
@@ -499,6 +590,37 @@
             <element signature="method#selectSpace#0;class#Game#0" />
             <element signature="method#nextTurn#0;class#Game#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Space.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="method#Space#0;class#Space#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/lib/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4472">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence-backend/src/main/java/com/sequence/WebSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4712">
+          <caret line="262" column="12" selection-start-line="262" selection-start-column="12" selection-end-line="262" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
