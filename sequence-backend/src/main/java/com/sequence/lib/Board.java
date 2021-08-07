@@ -153,7 +153,7 @@ public class Board {
     // Checks if there exists a sequence in the board
     public int checkSequence(int x, int y, Player player) {
 
-        System.out.println("CHECKING FOR A SEQUENCE");
+        System.out.println("\nCHECKING FOR A SEQUENCE, Starting at (" + x + ", " + y + ")");
 
         boolean sequenceFound = false;
         newSequenceList.clear();
@@ -161,12 +161,12 @@ public class Board {
         int checkAllSides = 1;
         switch (checkAllSides) {
             case 1:
-                System.out.print("Looking RIGHT");
+                System.out.print("Looking UP ");
                 // Check if there is any horizontal sequence (x-axis)
                 int totalXCount =
                         checkNextSquare(x, y, MOVE_RIGHT, STAY, player.getPlayerMarker(), 5);
                 if (totalXCount < 5) {
-                    System.out.print("Looking LEFT");
+                    System.out.print("Looking DOWN ");
                     totalXCount +=
                         checkNextSquare(x-1, y, MOVE_LEFT, STAY, player.getPlayerMarker(), 5 - totalXCount);
                 }
@@ -177,12 +177,12 @@ public class Board {
                     newSequenceList.clear();
                 }
             case 2:
-                System.out.print("Looking UP");
+                System.out.print("Looking LEFT ");
                 // Check if there is any vertical sequence (y-axis)
                 int totalYCount =
                         checkNextSquare(x, y, STAY, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalYCount < 5) {
-                    System.out.print("Looking DOWN");
+                    System.out.print("Looking RIGHT ");
                     totalYCount +=
                         checkNextSquare(x, y-1, STAY, MOVE_DOWN, player.getPlayerMarker(), 5 - totalYCount);
                 }
@@ -193,12 +193,12 @@ public class Board {
                     newSequenceList.clear();
                 }
             case 3:
-                System.out.print("Looking UP-LEFT");
+                System.out.print("Looking DOWN-LEFT ");
                 // Check if there is a left diagonal sequence (diagonal: top-left to bottom-right)
                 int totalLDiagonalCount =
                         checkNextSquare(x, y, MOVE_LEFT, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalLDiagonalCount < 5) {
-                    System.out.print("Looking DOWN-RIGHT");
+                    System.out.print("Looking UP-RIGHT ");
                     totalLDiagonalCount +=
                         checkNextSquare(x+1, y-1, MOVE_RIGHT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalLDiagonalCount);
                 }
@@ -209,12 +209,12 @@ public class Board {
                     newSequenceList.clear();
                 }
             case 4:
-                System.out.print("Looking UP-RIGHT");
+                System.out.print("Looking UP-LEFT ");
                 // Check if there is a right diagonal sequence (diagonal: bottom-left to top-right)
                 int totalRDiagonalCount =
                         checkNextSquare(x, y, MOVE_RIGHT, MOVE_UP, player.getPlayerMarker(), 5);
                 if (totalRDiagonalCount < 5) {
-                    System.out.print("Looking DOWN-LEFT");
+                    System.out.print("Looking DOWN-RIGHT ");
                     totalRDiagonalCount +=
                         checkNextSquare(x-1, y-1, MOVE_LEFT, MOVE_DOWN, player.getPlayerMarker(), 5 - totalRDiagonalCount);
                 }
@@ -226,13 +226,23 @@ public class Board {
         }
 
         if (sequenceFound) {
+            System.out.println("--- SEQUENCE FOUND ---");
+            System.out.print("newSequenceList: ");
+            printSeqList(newSequenceList);
+            System.out.print("First Sequence found: ");
+            printSeqList(player.getSequenceList());
+
             if (player.getSequenceCounter() == 1) { // If you have 1 sequence found previously,
                 int intersections = 0;
                 for(Space val : newSequenceList) { // Check for any intersections between sequences
-                    if (player.getSequenceList().contains(val)) {
+                    printSpaceInfo(val);
+                    System.out.println("Does player's first seq contain val: " + player.spaceInSequence(val));
+                    if (player.spaceInSequence(val)) {
                         intersections++;
+                        System.out.println("Intersection at: (" + val.getxLocation() + ", " + val.getyLocation() + ")");
                     }
                 };
+                System.out.println("Total Intersections: " + intersections);
                 if (intersections <= 1) {   // If there is at most one sequence,
                     player.setSequenceCounter(2);   // Set sequence count to 2
                     player.setSequenceList2(newSequenceList); // Save second sequence
@@ -282,22 +292,38 @@ public class Board {
         return player.getSequenceCounter();
     }
 
+    public void printSeqList(List<Space> sequenceList) {
+        System.out.print("{ ");
+        if (sequenceList != null) {
+            for (int i = 0; i < sequenceList.size(); i++) {
+                System.out.print("(" + sequenceList.get(i).getxLocation() + ", " + sequenceList.get(i).getyLocation() + ") ");
+            }
+        }
+        System.out.println("}");
+    }
+
+    public void printSpaceInfo(Space space) {
+        System.out.print("Space Location: (" + space.getxLocation() + ", " + space.getyLocation() + ")  ");
+        System.out.print("CardSuitNum: " + space.getCardSuitNum() + "   ");
+        System.out.println("Occupancy: " + space.getOccupancy());
+    }
+
     // Helper recursive method to find adjacent spaces with same marker to find possible sequence
     public int checkNextSquare(int x, int y, int xMove, int yMove, int playerMarker, int maxDist) {
 
-        System.out.println(" at Coordinates: (" + x + ", " + y + ")");
-        System.out.println("Spaces left: " + maxDist);
+        System.out.println("at Coordinates: (" + x + ", " + y + ")");
+        System.out.println("Spaces remaining: " + maxDist);
 
         // Check if x and y are out of bounds.
         if (x < 0 || x > 9 || y < 0 || y > 9) {
 
-            System.out.print("Stop searching: Out of bounds");
+            System.out.println("Stop searching: Out of bounds");
             return 0; // If so, return 0 and stop recursing
         }
 
         // Check if we have reach the maximum distance.
         if (maxDist <= 0) {
-            System.out.print("Stop searching: Reach maximum distance");
+            System.out.println("Stop searching: Reach maximum distance");
             return 0; // If so, return 0 and stop recursing
         }
 
@@ -338,10 +364,8 @@ public class Board {
         // Add sequence to list to keep track.
         newSequenceList.add(new Space(x, y, getSpaceOnBoard(x, y).getCardSuitNum(), getSpaceOnBoard(x, y).getOccupancy()));
 
-
-
         // Beyond all checks, recurse to the next space and check if it has the same marker.
-        return 1 + checkNextSquare(x + xMove, y + yMove, xMove, yMove, playerMarker, maxDist--);
+        return 1 + checkNextSquare(x + xMove, y + yMove, xMove, yMove, playerMarker, maxDist-1);
     }
 
 }

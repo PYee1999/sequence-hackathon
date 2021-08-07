@@ -45,6 +45,4 @@ public class Space {
     public void setOccupancy(int occupancy) {
         this.occupancy = occupancy;
     }
-
-
 }
